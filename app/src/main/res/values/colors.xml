@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bkg_auth">#C7E0F4</color>
+    <color name="btn_auth">#106EBE</color>
+    <color name="navbar">#2B88D8</color>
+    <color name="pnl_clickable">#FEDE78</color>
+    <color name="btn_primary">#C7E0F4</color>
+    <color name="btn_secondary">#FFEBAB</color>
+    <color name="btn_danger">#EB9191</color>
+    <color name="light_blue">#EFF6FC</color>
+    <color name="light_yellow">#FFF2C8</color>
+</resources>
