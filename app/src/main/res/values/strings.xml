@@ -18,11 +18,18 @@
     <!-- Strings used for Home Fragment -->
     <string name="HF_main_title">Mis eventos</string>
     <string name="HF_second_title">Próximos eventos</string>
-    <string name="HF_my_events_title">Los lenguajes del amor</string>
-    <string name="HF_my_events_state">En curso</string>
-    <string name="HF_my_events_classroom">D-201</string>
-    <string name="HF_my_events_schedule">14:00 - 16:00</string>
-    <string name="HF_my_events_description">Mis eventos</string>
+
+    <string name="HF_my_events_title1">Los lenguajes del amor</string>
+    <string name="HF_my_events_state1">En curso</string>
+    <string name="HF_my_events_classroom1">D-201</string>
+    <string name="HF_my_events_schedule1">14:00 - 16:00</string>
+    <string name="HF_my_events_description1">Es importante comprender las diferentes formas en las que las dificultades para expresar amor pueden surgir en el día a día, y también las maneras en las que los problemas se resuelven.</string>
+
+    <string name="HF_my_events_title2">Donatón de plomo</string>
+    <string name="HF_my_events_state2">Pasada</string>
+    <string name="HF_my_events_classroom2">M-102</string>
+    <string name="HF_my_events_schedule2">12:00 - 14:00</string>
+    <string name="HF_my_events_description2">Estudiar en Pance puede ser emocionante, para demostrarlo, te invitamos a esta donatón de plomo patrocinada por The Famous Absurdo en compañía de donadores anónimos. ¡No faltes!</string>
 
 
     <!-- Strings used for Activities Fragment -->

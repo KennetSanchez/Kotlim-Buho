@@ -11,7 +11,8 @@
     <color name="light_yellow">#FFF2C8</color>
     <color name="icons_outline">#001328</color>
     <color name="background_app">#F6FCFF</color>
-    <color name="text_color">#001328</color>
+    <color name="main_text_color">#001328</color>
+    <color name="secondary_text_color">#082D55</color>
     <color name="panel_separator">#F0CE7A</color>
 
 </resources>

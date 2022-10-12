@@ -14,7 +14,7 @@
         android:layout_marginTop="31dp"
         android:text="@string/HF_main_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text_color"
+        android:textColor="@color/main_text_color"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="sans"
@@ -29,100 +29,263 @@
         android:layout_marginTop="392dp"
         android:text="@string/HF_second_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text_color"
+        android:textColor="@color/main_text_color"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="88dp"
-        android:orientation="vertical"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@color/btn_danger"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.185">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="105dp"
-            android:background="@color/btn_secondary"
+            android:layout_height="wrap_content"
             android:clickable="true"
             android:clipChildren="true"
             android:clipToPadding="false"
             android:focusable="true">
 
-            <TextView
-                android:id="@+id/textView8"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="36dp"
-                android:background="@color/panel_separator"
-                android:textColor="@color/panel_separator"
+                android:layout_height="120dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/btn_secondary"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/panel_separator"
+                    android:textColor="@color/panel_separator"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/HF_my_events_state1"
+                    android:textColor="@color/main_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_state1" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/HF_my_events_schedule1"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_schedule1" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/HF_my_events_classroom1"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_classroom1" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="276dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="60dp"
+                    android:text="@string/HF_my_events_description1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="11sp"
+                    android:typeface="sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_description1" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/HF_my_events_title1"
+                    android:textColor="@color/main_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_title1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/btn_secondary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/HF_my_events_title"
-                android:textColor="@color/text_color"
-                android:textSize="16sp"
-                android:typeface="sans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/HF_my_events_title" />
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/HF_my_events_classroom2"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_classroom2" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="328dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/HF_my_events_state"
-                android:textColor="@color/text_color"
-                android:textSize="16sp"
-                android:typeface="sans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/HF_my_events_state" />
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/HF_my_events_state2"
+                    android:textColor="@color/main_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_state2" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="52dp"
-                android:text="@string/HF_my_events_classroom"
-                android:textColor="@color/text_color"
-                android:textSize="16sp"
-                android:typeface="sans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/HF_my_events_classroom" />
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/HF_my_events_schedule2"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_schedule2" />
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="300dp"
-                android:layout_marginTop="52dp"
-                android:text="@string/HF_my_events_schedule"
-                android:textColor="@color/text_color"
-                android:textSize="16sp"
-                android:typeface="sans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/HF_my_events_schedule" />
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="276dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="60dp"
+                    android:text="@string/HF_my_events_description2"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="11sp"
+                    android:typeface="sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_description2" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/HF_my_events_title2"
+                    android:textColor="@color/main_text_color"
+                    android:textSize="12sp"
+                    android:typeface="sans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/HF_my_events_title2" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/panel_separator"
+                    android:textColor="@color/panel_separator"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="0dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-    </LinearLayout>
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="424dp"
+        android:background="@color/btn_danger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/btn_secondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/btn_secondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
