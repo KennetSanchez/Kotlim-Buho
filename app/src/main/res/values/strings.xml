@@ -2,6 +2,7 @@
     <string name="app_name">Buho</string>
     <string name="title_activity_asisstance">AsisstanceActivity</string>
     <!-- Strings used for fragments for navigation -->
+
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -13,6 +14,25 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- Strings used for Home Fragment -->
+    <string name="HF_main_title">Mis eventos</string>
+    <string name="HF_second_title">Próximos eventos</string>
+    <string name="HF_my_events_title">Los lenguajes del amor</string>
+    <string name="HF_my_events_state">En curso</string>
+    <string name="HF_my_events_classroom">D-201</string>
+    <string name="HF_my_events_schedule">14:00 - 16:00</string>
+    <string name="HF_my_events_description">Mis eventos</string>
+
+
+    <!-- Strings used for Activities Fragment -->
+    <string name="AF_main_title">Mis eventos</string>
+    <string name="AF_second_title">Próximos eventos</string>
+    <string name="AF_my_activities_title">Trombón</string>
+    <string name="AF_my_activities_state">Próximamente</string>
+    <string name="AF_my_activities_classroom">I-204</string>
+    <string name="AF_my_activities_schedule">16:00 - 18:00</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:srcCompat="@drawable/qricon" />
+        tools:srcCompat="@drawable/qr_code" />
 
     <Button
         android:id="@+id/button2"

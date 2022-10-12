@@ -9,4 +9,9 @@
     <color name="btn_danger">#EB9191</color>
     <color name="light_blue">#EFF6FC</color>
     <color name="light_yellow">#FFF2C8</color>
+    <color name="icons_outline">#001328</color>
+    <color name="background_app">#F6FCFF</color>
+    <color name="text_color">#001328</color>
+    <color name="panel_separator">#F0CE7A</color>
+
 </resources>
