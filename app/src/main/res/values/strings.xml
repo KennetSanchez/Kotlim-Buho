@@ -22,15 +22,20 @@
     <string name="HF_my_events_title1">Los lenguajes del amor</string>
     <string name="HF_my_events_state1">En curso</string>
     <string name="HF_my_events_classroom1">D-201</string>
-    <string name="HF_my_events_schedule1">14:00 - 16:00</string>
+    <string name="HF_my_events_schedule1">14:00 – 16:00</string>
     <string name="HF_my_events_description1">Es importante comprender las diferentes formas en las que las dificultades para expresar amor pueden surgir en el día a día, y también las maneras en las que los problemas se resuelven.</string>
 
     <string name="HF_my_events_title2">Donatón de plomo</string>
     <string name="HF_my_events_state2">Pasada</string>
     <string name="HF_my_events_classroom2">M-102</string>
-    <string name="HF_my_events_schedule2">12:00 - 14:00</string>
+    <string name="HF_my_events_schedule2">12:00 – 14:00</string>
     <string name="HF_my_events_description2">Estudiar en Pance puede ser emocionante, para demostrarlo, te invitamos a esta donatón de plomo patrocinada por The Famous Absurdo en compañía de donadores anónimos. ¡No faltes!</string>
 
+    <!-- Strings used for login activity-->
+    <string name="LA_LoginBtn">Iniciar sesión</string>
+    <string name="LA_UsernameETHint">Usuario</string>
+    <string name="LA_PassETHint">Contraseña</string>
+    <string name="LA_Title">BUHo</string>
 
     <!-- Strings used for Activities Fragment -->
     <string name="AF_main_title">Mis eventos</string>
@@ -38,7 +43,7 @@
     <string name="AF_my_activities_title">Trombón</string>
     <string name="AF_my_activities_state">Próximamente</string>
     <string name="AF_my_activities_classroom">I-204</string>
-    <string name="AF_my_activities_schedule">16:00 - 18:00</string>
+    <string name="AF_my_activities_schedule">16:00 – 18:00</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

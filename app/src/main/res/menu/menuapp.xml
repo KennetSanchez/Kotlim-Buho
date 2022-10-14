@@ -2,8 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/homeItem"
         android:icon="@drawable/home"
         android:title="@string/MAMenuInicio" />
-    <item android:title="@string/MAMenuActividades" />
-    <item android:title="@string/MAMenuAsistencia" />
+    <item
+        android:id="@+id/activitiesItem"
+        android:icon="@drawable/events"
+        android:title="@string/MAMenuActividades" />
+    <item
+        android:id="@+id/assistenceItem"
+        android:icon="@drawable/assistence"
+        android:title="@string/MAMenuAsistencia" />
 </menu>
