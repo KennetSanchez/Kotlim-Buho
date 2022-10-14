@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+       setContentView(R.layout.activity_main)
+        val view= binding.root
+        setContentView(view)
 
-        //homeFragment=HomeFragment.newInstance()
-        //activitiesFragment=ActivitiesFragment.newInstance()
-        assistanceFragment=AssistanceFragment.newInstance()
-        //showFragment(homeFragment)
+        assistanceFragment= AssistanceFragment.newInstance()
+
         binding.bottomNavigationView.setOnItemReselectedListener{menuItem->
             if(menuItem.itemId==R.id.homeItem){
                 //showFragment(homeFragment)
@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun showFragment(fragment: Fragment) {
         val transaction=supportFragmentManager.beginTransaction()

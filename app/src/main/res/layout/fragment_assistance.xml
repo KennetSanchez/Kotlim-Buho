@@ -17,11 +17,12 @@
         android:layout_marginBottom="19dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:srcCompat="@drawable/qr_code" />
+        app:srcCompat="@drawable/qr_code_scan__1_"
+        tools:srcCompat="@drawable/qr_code_scan__1_" />
 
     <Button
         android:id="@+id/button2"
@@ -34,48 +35,50 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929" />
+        app:layout_constraintVertical_bias="0.96" />
 
     <TableLayout
-        android:layout_width="570dp"
-        android:layout_height="399dp"
+        android:layout_width="346dp"
+        android:layout_height="262dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="113dp"
         android:background="@color/light_yellow"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.265">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="285dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_horizontal"
                 android:padding="3dip"
                 android:text="Actividad / Evento"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:layout_width="285dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_horizontal"
                 android:padding="3dip"
                 android:text="Fecha"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="285dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="3dip"
                 android:text="Trombon"
@@ -83,7 +86,7 @@
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:layout_width="285dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:padding="3dip"
@@ -119,8 +122,8 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.208" />
+        app:layout_constraintVertical_bias="0.249" />
 </androidx.constraintlayout.widget.ConstraintLayout>
