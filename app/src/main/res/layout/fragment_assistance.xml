@@ -15,17 +15,17 @@
         android:layout_marginTop="568dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="19dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/qrScanBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/qr_code_scan__1_"
-        tools:srcCompat="@drawable/qr_code_scan__1_" />
+        app:srcCompat="@drawable/qrcode"
+        tools:srcCompat="@drawable/qrcode" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/qrScanBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/btn_auth"
