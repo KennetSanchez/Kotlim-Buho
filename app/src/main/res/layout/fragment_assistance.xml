@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/btn_auth"
-        android:text="Registro"
+        android:text="@string/SF_main_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -60,7 +60,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:padding="3dip"
-                android:text="Actividad / Evento"
+                android:text="@string/SF_tv_header_1"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
 
@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="3dip"
-                android:text="Fecha"
+                android:text="@string/SF_tv_header_2"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
         </TableRow>
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="3dip"
-                android:text="Trombon"
+                android:text="@string/SF_tv_dummy_1A"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
 
@@ -90,7 +90,29 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:padding="3dip"
-                android:text="20/09/2022"
+                android:text="@string/SF_tv_dummy_1B"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dip"
+                android:text="@string/SF_tv_dummy_2A"
+                android:textAlignment="center"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:padding="3dip"
+                android:text="@string/SF_tv_dummy_2B"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
         </TableRow>

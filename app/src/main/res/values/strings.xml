@@ -15,27 +15,43 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    <!-- Strings used for Home Fragment -->
-    <string name="HF_main_title">Mis eventos</string>
-    <string name="HF_second_title">Próximos eventos</string>
-
-    <string name="HF_my_events_title1">Los lenguajes del amor</string>
-    <string name="HF_my_events_state1">En curso</string>
-    <string name="HF_my_events_classroom1">D-201</string>
-    <string name="HF_my_events_schedule1">14:00 – 16:00</string>
-    <string name="HF_my_events_description1">Es importante comprender las diferentes formas en las que las dificultades para expresar amor pueden surgir en el día a día, y también las maneras en las que los problemas se resuelven.</string>
-
-    <string name="HF_my_events_title2">Donatón de plomo</string>
-    <string name="HF_my_events_state2">Pasada</string>
-    <string name="HF_my_events_classroom2">M-102</string>
-    <string name="HF_my_events_schedule2">12:00 – 14:00</string>
-    <string name="HF_my_events_description2">Estudiar en Pance puede ser emocionante, para demostrarlo, te invitamos a esta donatón de plomo patrocinada por The Famous Absurdo en compañía de donadores anónimos. ¡No faltes!</string>
-
     <!-- Strings used for login activity-->
     <string name="LA_LoginBtn">Iniciar sesión</string>
     <string name="LA_UsernameETHint">Usuario</string>
     <string name="LA_PassETHint">Contraseña</string>
     <string name="LA_Title">BUHo</string>
+
+    <!-- Strings used for Home Fragment -->
+    <string name="HF_main_title">Mis eventos</string>
+    <string name="HF_second_title">Próximos eventos</string>
+    <string name="HF_event_date">Fecha: </string>
+    <string name="HF_event_schedule">Hora: </string>
+
+
+        <!-- Dummy info -->
+
+        <string name="HF_dummy_my_events_title1">Los lenguajes del amor</string>
+        <string name="HF_dummy_my_events_state1">En curso</string>
+        <string name="HF_dummy_my_events_classroom1">D-201</string>
+        <string name="HF_dummy_my_events_schedule1">14:00 – 16:00</string>
+        <string name="HF_dummy_my_events_description1">Es importante comprender las diferentes formas en las que las dificultades para expresar amor pueden surgir en el día a día, y también las maneras en las que los problemas se resuelven.</string>
+
+        <string name="HF_dummy_my_events_title2">Donatón de plomo</string>
+        <string name="HF_dummy_my_events_state2">Pasada</string>
+        <string name="HF_dummy_my_events_classroom2">M-102</string>
+        <string name="HF_dummy_my_events_schedule2">12:00 – 14:00</string>
+        <string name="HF_dummy_my_events_description2">Estudiar en Pance puede ser emocionante, para demostrarlo, te invitamos a esta donatón de plomo patrocinada por The Famous Absurdo en compañía de donadores anónimos. ¡No faltes!</string>
+
+        <string name="HF_dummy_next_events_1_header">Integración ramas de la IEEE</string>
+        <string name="HF_dummy_next_events_1_body">Las ramas de la IEEE de las universidades de Cali hará una integración para que miembros de distintas universidades tengan la oportunidad de conocer más personas con intereses similares</string>
+        <string name="HF_dummy_next_events_1_date">21/10/2022</string>
+        <string name="HF_dummy_next_events_1_schedule">11:30 - 15:00</string>
+
+        <string name="HF_dummy_next_events_2_header">Icesi\'s Honored Guest Country USA</string>
+        <string name="HF_dummy_next_events_2_body">Con el propósito de ampliar el conocimiento internacional y la perspectiva global de nuestra comunidad universitaria, tendremos semestralmente un “Icesi´s Honored Guest Country”. Este semestre comenzaremos con los Estados Unidos, con lo cual nos uniremos a las celebraciones que se realizan en el marco de los 200 años de relación entre este país y Colombia</string>
+        <string name="HF_dummy_next_events_2_date">23/10/2022</string>
+        <string name="HF_dummy_next_events_2_schedule">16:00 - 19:30</string>
+
 
     <!-- Strings used for Activities Fragment -->
     <string name="AF_main_title">Mis eventos</string>
@@ -44,6 +60,17 @@
     <string name="AF_my_activities_state">Próximamente</string>
     <string name="AF_my_activities_classroom">I-204</string>
     <string name="AF_my_activities_schedule">16:00 – 18:00</string>
+
+    <!-- Strings used for Assistance Fragment -->
+    <string name="SF_main_btn">Asistir</string>
+    <string name="SF_tv_header_1">Actividad / Evento</string>
+    <string name="SF_tv_header_2">Fecha</string>
+
+    <string name="SF_tv_dummy_1A">Trombón</string>
+    <string name="SF_tv_dummy_1B">10/09/2022</string>
+
+    <string name="SF_tv_dummy_2A">Trombón</string>
+    <string name="SF_tv_dummy_2B">03/09/2022</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
