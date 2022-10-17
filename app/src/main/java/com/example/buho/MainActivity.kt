@@ -12,35 +12,35 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    //private lateinit var homeFragment:HomeFragment
-    //private lateinit var activitiesFragment:ActivitiesFragment
-    private lateinit var assistanceFragment:AssistanceFragment
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       setContentView(R.layout.activity_main)
-        val view= binding.root
-        setContentView(view)
+        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        assistanceFragment= AssistanceFragment.newInstance()
+        val homeFragment = HomeFragment()
+        val activitiesFragment = ActivitiesFragment()
+        val assistanceFragment = AssistanceFragment()
+
+        setCurrentFragment(homeFragment)
+
 
         binding.bottomNavigationView.setOnItemReselectedListener{menuItem->
-            if(menuItem.itemId==R.id.homeItem){
-                //showFragment(homeFragment)
-            } else if(menuItem.itemId==R.id.activitiesItem){
-                //showFragment(activitiesFragment)
-            } else if(menuItem.itemId==R.id.assistenceItem){
-                showFragment(assistanceFragment)
+            when(menuItem.itemId){
+                R.id.homeItem -> setCurrentFragment(homeFragment)
+                R.id.activitiesItem -> setCurrentFragment(activitiesFragment)
+                R.id.assistenceItem -> setCurrentFragment(assistanceFragment)
             }
-            true
         }
-
     }
 
 
-    private fun showFragment(fragment: Fragment) {
-        val transaction=supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragmentContainer, fragment)
-        transaction.commit()
+    private fun setCurrentFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer, fragment)
+            commit()
+        }
     }
 }
