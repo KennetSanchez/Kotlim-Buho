@@ -57,7 +57,7 @@
             android:paddingBottom="15dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/AC_cd_a"
+                android:id="@+id/HC_cd_a"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -77,7 +77,7 @@
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/AC_cl_a"
+                    android:id="@+id/HC_cl_a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -182,7 +182,7 @@
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AC_cd_a">
+                app:layout_constraintTop_toBottomOf="@+id/HC_cd_a">
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -400,7 +400,7 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/AF_sa_cd_a"
+                android:id="@+id/HF_se_a"
                 android:layout_width="130dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="5dp"
@@ -497,7 +497,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/AF_sa_cd_b"
+                android:id="@+id/HF_se_b"
                 android:layout_width="130dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="5dp"
@@ -592,7 +592,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/AF_sa_cd_c"
+                android:id="@+id/HF_se_c"
                 android:layout_width="130dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="5dp"
@@ -601,7 +601,7 @@
                 app:cardCornerRadius="6dp"
                 app:cardElevation="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AF_sa_cd_a">
+                app:layout_constraintTop_toBottomOf="@+id/HF_se_a">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/AC_sa_cl_c"
@@ -689,7 +689,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/AF_sa_cd_d"
+                android:id="@+id/HF_se_d"
                 android:layout_width="130dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
@@ -698,7 +698,7 @@
                 app:cardCornerRadius="6dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AF_sa_cd_b">
+                app:layout_constraintTop_toBottomOf="@+id/HF_se_b">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/AC_sa_cl_d"
@@ -793,7 +793,7 @@
                 app:cardCornerRadius="6dp"
                 app:cardElevation="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AF_sa_cd_c">
+                app:layout_constraintTop_toBottomOf="@+id/HF_se_c">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/AC_sa_cl_e"
@@ -890,7 +890,7 @@
                 app:cardCornerRadius="6dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AF_sa_cd_d">
+                app:layout_constraintTop_toBottomOf="@+id/HF_se_d">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/AC_sa_cl_f"
