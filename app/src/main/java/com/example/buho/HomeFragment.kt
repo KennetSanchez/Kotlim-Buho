@@ -1,12 +1,16 @@
 package com.example.buho
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.allViews
 import androidx.core.view.children
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.example.buho.databinding.HomePageBinding
 
@@ -21,12 +25,13 @@ class HomeFragment : Fragment(R.layout.home_page) {
         _binding= HomePageBinding.inflate(inflater,container, false)
         val view= binding.root;
 
+        val cardsMyEvents = binding.HPMECl.children
 
-        binding.HCClA.setOnClickListener{
-            showDetails(it)
+        cardsMyEvents.forEach { children ->
+            children as CardView
+            val childCl = children[0]
+            childCl.setOnClickListener{showDetails(childCl)}
         }
-
-
         return view;
     }
 
@@ -43,16 +48,18 @@ class HomeFragment : Fragment(R.layout.home_page) {
                 dialogParams.add(currentText.text as String)
             }
         }
-        binding.testText.text = dialogParams[0]
 
         val df : DetailsFragment = DetailsFragment(
-            tittle = "T1",
-            state =  "S1",
-            classroom =  "C1",
-            schedule =  "SC1",
-            speaker_type =  "ST1",
-            speaker_name =  "SN1",
-            details =  "D1",
+            tittle = dialogParams[0],
+            state =  dialogParams[1],
+            classroom =  dialogParams[2],
+            schedule =  dialogParams[3],
+            speaker_type =  "Ponente: ",
+
+            //Not implemented yet
+            speaker_name =  "John Doe",
+
+            details =  dialogParams[4]
         )
     }
 }
