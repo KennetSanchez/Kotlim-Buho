@@ -17,12 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.databinding.HomePageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home_page) {
+class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
     private var _binding: HomePageBinding?=null
     private val binding get()=_binding!!
 
-    private val myEventsAdapter = EventsListAdapter()
-    private var hasChildren = false
+    private val myEventsAdapter = EventsListAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,13 +29,6 @@ class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home
     ): View {
         _binding = HomePageBinding.inflate(inflater,container, false)
         val view = binding.root;
-
-        val cardsMyEvents = binding.AFMaRv.children
-
-        cardsMyEvents.forEach { child ->
-            child.setOnClickListener{showDetails(child, "Estoy aquí") { imHere() } }
-        }
-
 
         val myEventsRV = binding.AFMaRv
         myEventsRV.setHasFixedSize(true)
@@ -48,12 +40,11 @@ class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home
         cardsSuggestedEvents.forEach { child ->
             child as CardView
             val childCl = child[0]
-            childCl.setOnClickListener{showDetails(childCl, "Seguir evento") { imInterested(childCl) } }
+            childCl.setOnClickListener{showDetails(childCl)}
         }
 
-        if (myEventsRV.size == 0 && !hasChildren) {
+        if (myEventsAdapter.itemCount == 0) {
             createDummyInfo()
-            hasChildren = true
         }
 
         return view
@@ -75,7 +66,7 @@ class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home
         myEventsAdapter.addCard(card3)
     }
 
-    private fun showDetails(view : View, buttonText : String, function_to_execute : () -> Unit){
+    private fun showDetails(view : View){
         val cl = view as ConstraintLayout
         val textsArrays = cl.children
 
@@ -92,20 +83,12 @@ class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home
             state =  dialogParams[1],
             classroom =  dialogParams[2],
             schedule =  dialogParams[3],
+            details =  dialogParams[4],
             speaker_type =  "Ponente: ",
             speaker_name =  "John Doe",
-            details =  dialogParams[4],
-            mainButtonText = buttonText,
-            onClickMethod = function_to_execute
+            mainButtonText = "Seguir evento",
+            onClickMethod = { imInterested(view) }
         ).show(parentFragmentManager, "details")
-    }
-
-    private fun goAssistance() {
-        (main[0] as BottomNavigationView).selectedItemId = R.id.assistenceItem
-    }
-
-    private fun imHere(){
-        goAssistance()
     }
 
     private fun imInterested(view : View) {
