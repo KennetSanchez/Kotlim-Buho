@@ -49,7 +49,7 @@ class HomeFragment : Fragment(R.layout.home_page) {
             }
         }
 
-        val df : DetailsFragment = DetailsFragment(
+        DetailsFragment(
             tittle = dialogParams[0],
             state =  dialogParams[1],
             classroom =  dialogParams[2],
@@ -60,6 +60,6 @@ class HomeFragment : Fragment(R.layout.home_page) {
             speaker_name =  "John Doe",
 
             details =  dialogParams[4]
-        )
+        ).show(parentFragmentManager, "details")
     }
 }
