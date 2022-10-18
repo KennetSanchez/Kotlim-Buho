@@ -16,7 +16,12 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        binding.loginBtn.setOnClickListener{
+        binding.LARegisterBtn.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.LALoginBtn.setOnClickListener{
             val username = binding.usernameET.text.toString()
             val pass = binding.passET.text.toString()
 
