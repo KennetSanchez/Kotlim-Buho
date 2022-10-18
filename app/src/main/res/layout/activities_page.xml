@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/AF_ma_sv"
+        android:id="@+id/AF_ma_rv"
         android:layout_width="310dp"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,7 +138,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/MEC_tittle"
+                        android:id="@+id/MEC_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"

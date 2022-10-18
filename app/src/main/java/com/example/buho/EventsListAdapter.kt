@@ -1,41 +1,34 @@
 package com.example.buho
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.buho.databinding.MyEventCardBinding
 
-class EventsListAdapter (
-          private var itemList : List<MyEventCardComponent> ,
-          private var context : Context
-        ): RecyclerView.Adapter<EventsListAdapter.ViewHolder>() {
+class EventsListAdapter : RecyclerView.Adapter<EventsViewHolder>() {
 
-    private var _binding: MyEventCardBinding?=null
-    private val binding get()=_binding!!
+    val cards = ArrayList<MyEventCardComponent>()
 
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindData(myEventCardComponent: MyEventCardComponent) {
-
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
+        val inflator = LayoutInflater.from(parent.context)
+        val view = inflator.inflate(R.layout.my_event_card, parent, false)
+        return EventsViewHolder(view)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.my_event_card, parent, false)
-        return ViewHolder(view)
-    }
+    override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
+        val cardN = cards[position]
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindData(itemList[position])
-    }
-
-    fun setItems(items: List<MyEventCardComponent>){
-        itemList = items
+        holder.title.text = cardN.title
+        holder.state.text = cardN.state
+        holder.classroom.text = cardN.classroom
+        holder.schedule.text = cardN.schedule
+        holder.description.text = cardN.description
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return cards.size
+    }
+
+    fun addCard(cardComponent: MyEventCardComponent) {
+        cards.add(cardComponent)
     }
 }
