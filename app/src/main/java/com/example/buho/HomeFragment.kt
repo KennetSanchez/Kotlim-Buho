@@ -12,6 +12,7 @@ import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.databinding.HomePageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -26,13 +27,13 @@ class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home
         _binding = HomePageBinding.inflate(inflater,container, false)
         val view = binding.root;
 
-        val cardsMyEvents = binding.HPMECl.children
-
-        cardsMyEvents.forEach { children ->
-            children as CardView
-            val childCl = children[0]
-            childCl.setOnClickListener{showDetails(childCl, "Estoy aquí") { imHere() } }
-        }
+//        val cardsMyEvents = binding.HPMECl.children
+//
+//        cardsMyEvents.forEach { children ->
+//            children as CardView
+//            val childCl = children[0]
+//            childCl.setOnClickListener{showDetails(childCl, "Estoy aquí") { imHere() } }
+//        }
 
         val cardsSuggestedEvents = binding.HPSECl.children
 
@@ -41,14 +42,27 @@ class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home
             val childCl = children[0]
             childCl.setOnClickListener{showDetails(childCl, "Seguir evento") { imInterested() } }
         }
-
-        return view;
+        createDummyInfo()
+        return view
     }
 
 
-    private fun createDummyMy(){
-        val card = MyEventCardComponent("Titulo", "En curso", "Salón", "12:00-14:00", "Lorem ipsum")
-        binding.HPMECl.addView(card.view)
+    private fun createDummyInfo(){
+        val cards = ArrayList<MyEventCardComponent>()
+        cards.add(MyEventCardComponent(getString(R.string.HF_dummy_my_events_title1), getString(R.string.HF_dummy_my_events_state1), getString(R.string.HF_dummy_my_events_classroom1),
+            getString(R.string.HF_dummy_my_events_schedule1), getString(R.string.HF_dummy_my_events_description1), this.context!!))
+
+        cards.add(MyEventCardComponent(getString(R.string.HF_dummy_my_events_title2), getString(R.string.HF_dummy_my_events_state2), getString(R.string.HF_dummy_my_events_classroom2),
+            getString(R.string.HF_dummy_my_events_schedule2), getString(R.string.HF_dummy_my_events_description2), this.context!!))
+
+        //cards.add(MyEventCardComponent(getString(R.string.HF_dummy_my_events_title3), getString(R.string.HF_dummy_my_events_state3), getString(R.string.HF_dummy_my_events_classroom3),
+        //  getString(R.string.HF_dummy_my_events_schedule3), getString(R.string.HF_dummy_my_events_description3), this.context!!))
+
+        Log.i("sus", "1")
+        binding.AFMaSv.adapter = EventsListAdapter(cards, this.context!!)
+        Log.i("sus", "2")
+        binding.AFMaSv.layoutManager = LinearLayoutManager(this.context)
+        Log.i("sus", "3")
 
     }
 
