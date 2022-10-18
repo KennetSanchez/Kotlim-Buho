@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class EventsListAdapter : RecyclerView.Adapter<EventsViewHolder>() {
 
-    val cards = ArrayList<MyEventCardComponent>()
+    private val cards = ArrayList<MyEventCardComponent>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
         val inflator = LayoutInflater.from(parent.context)
@@ -30,5 +30,6 @@ class EventsListAdapter : RecyclerView.Adapter<EventsViewHolder>() {
 
     fun addCard(cardComponent: MyEventCardComponent) {
         cards.add(cardComponent)
+
     }
 }
