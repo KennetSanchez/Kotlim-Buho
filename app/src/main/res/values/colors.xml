@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bkg_auth">#C7E0F4</color>
+    <color name="bkg_auth">#A8CCE9</color>
     <color name="btn_auth">#106EBE</color>
     <color name="details_header_footer">#106EBE</color>
     <color name="details_info">#C7E0F4</color>

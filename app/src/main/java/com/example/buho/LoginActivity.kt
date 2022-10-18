@@ -3,6 +3,7 @@ package com.example.buho
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.widget.Toast
 import com.example.buho.databinding.ActivityLoginBinding
@@ -11,10 +12,19 @@ class LoginActivity : AppCompatActivity() {
     private val binding:ActivityLoginBinding by lazy{
         ActivityLoginBinding.inflate(layoutInflater)
     }
+
+    private var hidden : Boolean = false;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(binding.root)
+
+        Log.i(">>>", "${binding.passET.inputType}")
+
+        binding.passwordToggle.setOnClickListener {
+            toggle()
+        }
 
         binding.LARegisterBtn.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -48,5 +58,20 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun toggle() {
+        val newRes = when {
+            hidden -> R.drawable.eye_slash
+            else -> R.drawable.eye
+        }
+        binding.passET.inputType = when {
+            hidden -> InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            else -> InputType.TYPE_TEXT_VARIATION_PASSWORD
+        }
+
+        Log.i(">>>", "${binding.passET.inputType}")
+        binding.passwordToggle.setImageResource(newRes)
+        hidden = !hidden
     }
 }

@@ -37,7 +37,6 @@
 
             <TextView
                 android:id="@+id/MEC_tittle"
-                tools:text="@string/HF_dummy_my_events_title1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -51,7 +50,6 @@
 
             <TextView
                 android:id="@+id/MEC_state"
-                tools:text="@string/HF_dummy_my_events_state1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -65,7 +63,6 @@
 
             <TextView
                 android:id="@+id/MEC_classroom"
-                tools:text="@string/HF_dummy_my_events_classroom1"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="12dp"
@@ -79,7 +76,6 @@
 
             <TextView
                 android:id="@+id/MEC_schedule"
-                tools:text="@string/HF_dummy_my_events_schedule1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

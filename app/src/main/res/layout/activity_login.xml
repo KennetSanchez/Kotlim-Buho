@@ -8,27 +8,6 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="102dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo_icesi"
-        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="102dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/bu_white" />
-
-    <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="146dp"
@@ -42,10 +21,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/LV_CV_1"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/input_container_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        app:cardBackgroundColor="#00FFFFFF"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="6dp"
         app:cardElevation="0dp"
         app:cardMaxElevation="0dp"
@@ -53,27 +32,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/usernameET"
-            android:layout_width="250dp"
-            android:layout_height="30dp"
-            android:background="@color/background_app"
-            android:hint="@string/LA_UsernameETHint"
-            android:shadowRadius="6"
-            android:textAlignment="center"
-            android:textColor="@color/main_text_color"
-            android:textColorHint="@color/hint_text_color"
-            android:autofillHints="username"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingEnd="8dp"
+            android:paddingStart="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameET"
+                android:layout_width="@dimen/input_width"
+                android:layout_height="@dimen/input_height"
+                android:autofillHints="username"
+                android:background="#00FFFFFF"
+                android:hint="@string/LA_UsernameETHint"
+                android:shadowRadius="6"
+                android:textAlignment="center"
+                android:textColor="@color/main_text_color"
+                android:textColorHint="@color/hint_text_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/LV_CV_2"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/input_container_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#00FFFFFF"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="6dp"
         app:cardElevation="0dp"
         app:cardMaxElevation="0dp"
@@ -81,18 +71,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LV_CV_1">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passET"
-            android:layout_width="250dp"
-            android:layout_height="30dp"
-            android:background="@color/background_app"
-            android:hint="@string/RA_third_field_prompt"
-            android:inputType="textPassword"
-            android:textAlignment="center"
-            android:textColor="@color/main_text_color"
-            android:textColorHint="@color/hint_text_color"
-            android:autofillHints="password"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingEnd="8dp"
+            android:paddingStart="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passET"
+                android:layout_width="@dimen/input_width"
+                android:layout_height="@dimen/input_height"
+                android:autofillHints="password"
+                android:background="#00FFFFFF"
+                android:hint="@string/LA_PassETHint"
+                android:inputType="textPassword"
+                android:shadowRadius="6"
+                android:textAlignment="center"
+                android:textColor="@color/main_text_color"
+                android:textColorHint="@color/hint_text_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            <ImageView
+                android:id="@+id/password_toggle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/passET"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/eye" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -135,11 +147,32 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/btn_auth"
-            android:shadowRadius="6"
             android:text="@string/RA_btn_register"
             android:textColor="@color/text_white"
             app:circularflow_defaultRadius="6dp"
             app:circularflow_radiusInDP="6dp" />
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="102dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/icon_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo_icesi"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="102dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/bu_white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
