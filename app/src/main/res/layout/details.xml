@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="@color/btn_danger"
-                    android:text="No me interesa"
+                    android:text="@string/details_secondary_button_text"
                     app:circularflow_defaultRadius="20dp"
                     app:circularflow_radiusInDP="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -41,12 +41,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/DE_im_here"
+                    android:id="@+id/DE_main_button"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/btn_primary"
-                    android:text="Estoy aquí"
+                    android:text="Botón primario"
+                    android:textColor="@color/secondary_text_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
-                    android:layout_marginTop="62dp"
+                    android:layout_marginTop="22dp"
                     android:text="Título"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -75,7 +76,7 @@
                     android:id="@+id/DE_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="62dp"
+                    android:layout_marginTop="22dp"
                     android:layout_marginEnd="45dp"
                     android:text="Estado"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxWidth="320dp"
-                    android:text="Detalles  mamalones"
+                    android:text="Detalles"
                     android:textColor="@color/main_text_color"
                     android:textSize="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
