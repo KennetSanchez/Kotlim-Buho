@@ -5,5 +5,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="card_size_small">140dp</dimen>
+    <dimen name="card_container_height">120dp</dimen>
     <dimen name="card_container_width">360dp</dimen>
+
+
 </resources>

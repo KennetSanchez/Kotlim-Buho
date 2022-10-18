@@ -23,18 +23,26 @@ class ActivitiesFragment : Fragment(R.layout.activities_page) {
         _binding= ActivitiesPageBinding.inflate(inflater,container, false)
         val view= binding.root;
 
-        val cardsMyEvents = binding.APMECl.children
+        val cardsMyActivities = binding.AFMACl.children
 
-        cardsMyEvents.forEach { children ->
+        cardsMyActivities.forEach { children ->
             children as CardView
             val childCl = children[0]
-            childCl.setOnClickListener{showDetails(childCl)}
+            childCl.setOnClickListener{showDetails(childCl, "Estoy aquí") { imHere() } }
+        }
+
+        val cardsSuggestedActivities = binding.AFSACl.children
+
+        cardsSuggestedActivities.forEach { children ->
+            children as CardView
+            val childCl = children[0]
+            childCl.setOnClickListener{showDetails(childCl, "Seguir actividad") { imInterested() } }
         }
         return view;
     }
 
 
-    private fun showDetails(view : View){
+    private fun showDetails(view : View, buttonText : String, function_to_execute : () -> Unit){
         val cl = view as ConstraintLayout
         val textsArrays = cl.children
 
@@ -57,7 +65,23 @@ class ActivitiesFragment : Fragment(R.layout.activities_page) {
             //Not implemented yet
             speaker_name =  "John Doe",
 
-            details =  dialogParams[4]
+            details =  dialogParams[4],
+            mainButtonText = buttonText,
+            onClickMethod = function_to_execute
         ).show(parentFragmentManager, "details")
+    }
+
+    private fun imHere(){
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer, AssistanceFragment())
+            commit()
+        }
+    }
+
+    private fun imInterested(){
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer, AssistanceFragment())
+            commit()
+        }
     }
 }

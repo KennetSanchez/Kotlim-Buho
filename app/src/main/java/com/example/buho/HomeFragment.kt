@@ -1,14 +1,12 @@
 package com.example.buho
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.allViews
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
@@ -30,13 +28,28 @@ class HomeFragment : Fragment(R.layout.home_page) {
         cardsMyEvents.forEach { children ->
             children as CardView
             val childCl = children[0]
-            childCl.setOnClickListener{showDetails(childCl)}
+            childCl.setOnClickListener{showDetails(childCl, "Estoy aquí") { imHere() } }
         }
+
+        val cardsSuggestedEvents = binding.HPSECl.children
+
+        cardsSuggestedEvents.forEach { children ->
+            children as CardView
+            val childCl = children[0]
+            childCl.setOnClickListener{showDetails(childCl, "Seguir evento") { imInterested() } }
+        }
+
         return view;
     }
 
 
-    private fun showDetails(view : View){
+    private fun createDummyMy(){
+        val card = MyEventCardComponent("Titulo", "En curso", "Salón", "12:00-14:00", "Lorem ipsum")
+        binding.HPMECl.addView(card.view)
+
+    }
+
+    private fun showDetails(view : View, buttonText : String, function_to_execute : () -> Unit){
         val cl = view as ConstraintLayout
         val textsArrays = cl.children
 
@@ -59,7 +72,23 @@ class HomeFragment : Fragment(R.layout.home_page) {
             //Not implemented yet
             speaker_name =  "John Doe",
 
-            details =  dialogParams[4]
+            details =  dialogParams[4],
+            mainButtonText = buttonText,
+            onClickMethod = function_to_execute
         ).show(parentFragmentManager, "details")
+    }
+
+    private fun imHere(){
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer, AssistanceFragment())
+            commit()
+        }
+    }
+
+    private fun imInterested(){
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer, AssistanceFragment())
+            commit()
+        }
     }
 }
