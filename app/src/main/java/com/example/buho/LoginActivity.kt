@@ -13,8 +13,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.loginBtn.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            val username = binding.usernameET.text.toString()
+            val pass = binding.passET.text.toString()
+
+            if(username==R.string.LA_dummy_un.toString()&&pass==R.string.LA_dummy_pass.toString()){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

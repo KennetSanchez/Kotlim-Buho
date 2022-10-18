@@ -22,6 +22,8 @@
     <string name="LA_UsernameETHint">Usuario</string>
     <string name="LA_PassETHint">Contraseña</string>
     <string name="LA_Title">BuHo</string>
+    <string name="LA_dummy_un">Domi</string>
+    <string name="LA_dummy_pass">123456</string>
 
     <!-- Strings used for profile activity-->
     <string name="PA_Title">Información de Perfil</string>
