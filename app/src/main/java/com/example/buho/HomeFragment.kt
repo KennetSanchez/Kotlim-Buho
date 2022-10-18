@@ -1,6 +1,7 @@
 package com.example.buho
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,18 +11,20 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.buho.databinding.HomePageBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeFragment : Fragment(R.layout.home_page) {
+class HomeFragment(private val main : ConstraintLayout) : Fragment(R.layout.home_page) {
     private var _binding: HomePageBinding?=null
     private val binding get()=_binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding= HomePageBinding.inflate(inflater,container, false)
-        val view= binding.root;
+    ): View {
+        _binding = HomePageBinding.inflate(inflater,container, false)
+        val view = binding.root;
 
         val cardsMyEvents = binding.HPMECl.children
 
@@ -78,17 +81,15 @@ class HomeFragment : Fragment(R.layout.home_page) {
         ).show(parentFragmentManager, "details")
     }
 
+    private fun goAssistance() {
+        (main[0] as BottomNavigationView).selectedItemId = R.id.assistenceItem
+    }
+
     private fun imHere(){
-        parentFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, AssistanceFragment())
-            commit()
-        }
+        goAssistance()
     }
 
     private fun imInterested(){
-        parentFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, AssistanceFragment())
-            commit()
-        }
+        goAssistance()
     }
 }
