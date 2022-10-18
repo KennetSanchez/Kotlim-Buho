@@ -4,17 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_app"
     tools:context=".ProfileActivity">
-
-    <Button
-        android:id="@+id/cancelBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="@string/PA_CancelBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/saveBtn"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/profileActivityTitle"
@@ -23,6 +14,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:text="@string/PA_Title"
+        android:textColor="@color/main_text_color"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +26,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="56dp"
         android:text="@string/PA_NameTV"
+        android:textColor="@color/main_text_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileActivityTitle" />
 
@@ -43,9 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/main_text_color"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/main_text_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTV"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -57,15 +52,17 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:text="@string/PA_EmailTV"
+        android:textColor="@color/main_text_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextTextPersonEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/main_text_color"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -80,15 +77,17 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:text="@string/PA_PassTV"
+        android:textColor="@color/main_text_color"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonEmail" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextTextPersonPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/main_text_color"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -96,12 +95,23 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordTV" />
 
     <Button
-        android:id="@+id/saveBtn"
+        android:id="@+id/RA_save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/btn_auth"
         android:text="@string/PA_SaveBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cancelBtn" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/RA_back_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_arrow" />
 </androidx.constraintlayout.widget.ConstraintLayout>

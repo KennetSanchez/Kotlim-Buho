@@ -109,38 +109,17 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cd_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="96dp"
         app:cardBackgroundColor="#00FFFFFF"
         app:cardCornerRadius="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LV_CV_2">
-
-        <Button
-            android:id="@+id/LA_loginBtn"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/btn_auth"
-            android:shadowRadius="6"
-            android:text="@string/LA_LoginBtn"
-            android:textColor="@color/text_white"
-            app:circularflow_defaultRadius="6dp"
-            app:circularflow_radiusInDP="6dp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:cardBackgroundColor="#00FFFFFF"
-        app:cardCornerRadius="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <Button
             android:id="@+id/LA_registerBtn"
@@ -151,6 +130,7 @@
             android:textColor="@color/text_white"
             app:circularflow_defaultRadius="6dp"
             app:circularflow_radiusInDP="6dp" />
+
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -164,6 +144,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo_icesi"
         tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cd_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="35dp"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LV_CV_2">
+
+        <Button
+            android:id="@+id/LA_loginBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/btn_auth"
+            android:shadowRadius="6"
+            android:text="@string/LA_LoginBtn"
+            android:textColor="@color/text_white"
+            app:circularflow_defaultRadius="6dp"
+            app:circularflow_radiusInDP="6dp" />
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView7"

@@ -8,6 +8,18 @@
     tools:context=".RegisterActivity">
 
 
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_arrow" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/RA_CI_1"
         android:layout_width="wrap_content"
@@ -154,6 +166,8 @@
         android:layout_marginTop="60dp"
         app:cardBackgroundColor="#00FFFFFF"
         app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RA_CI_4">
@@ -163,11 +177,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/btn_auth"
-            android:shadowRadius="6"
             android:text="@string/RA_btn_register"
             android:textColor="@color/text_white"
-            app:circularflow_defaultRadius="6dp"
-            app:circularflow_radiusInDP="6dp" />
+            android:clickable="true"
+            android:focusable="true"
+            />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
