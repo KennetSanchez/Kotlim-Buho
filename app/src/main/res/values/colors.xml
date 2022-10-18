@@ -12,10 +12,12 @@
     <color name="light_blue">#EFF6FC</color>
     <color name="light_yellow">#FFF2C8</color>
     <color name="icons_outline">#001328</color>
-    <color name="background_app">#F6FCFF</color>
+    <color name="background_app">#E4F3FB</color>
     <color name="main_text_color">#001328</color>
     <color name="secondary_text_color">#082D55</color>
     <color name="hint_text_color">#8A8A8A</color>
     <color name="panel_separator">#F0CE7A</color>
+    <color name="panel_separator_light">#EDDDB7</color>
+
     <color name="text_white">#F7F7F7</color>
 </resources>
