@@ -16,9 +16,6 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.findFragment
 import com.example.buho.databinding.DetailsBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import eightbitlab.com.blurview.BlurView
-import eightbitlab.com.blurview.RenderEffectBlur
-import eightbitlab.com.blurview.RenderScriptBlur
 
 class DetailsFragment constructor(
     private val tittle: String,
