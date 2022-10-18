@@ -12,7 +12,7 @@
         android:id="@+id/RA_CI_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         app:cardBackgroundColor="#00FFFFFF"
         app:cardCornerRadius="6dp"
         app:cardElevation="0dp"
@@ -21,26 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/RA_user_il_1"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColorHint="@color/secondary_text_color"
-                app:hintEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/RA_user_if_name"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:background="@color/background_app"
+            android:hint="@string/RA_first_field_prompt"
+            android:shadowRadius="6"
+            android:textAlignment="center"
+            android:textColor="@color/main_text_color"
+            android:textColorHint="@color/hint_text_color"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/RA_user_if_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/background_app"
-                    android:hint="@string/RA_first_field_prompt"
-                    android:shadowRadius="6"
-                    android:textAlignment="center"
-                    android:textColor="@color/main_text_color"
-                    android:textColorHint="@color/main_text_color"
-                    tools:ignore="TouchTargetSizeCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -56,36 +48,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RA_CI_1">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RA_user_il_2"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/RA_user_if_institutional_email"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="30dp"
+            android:background="@color/background_app"
+            android:hint="@string/RA_second_field_prompt"
             android:textAlignment="center"
-            android:textColorHint="@color/secondary_text_color"
-            app:boxCornerRadiusBottomEnd="6dp"
-            app:boxCornerRadiusBottomStart="6dp"
-            app:boxCornerRadiusTopEnd="6dp"
-            app:boxCornerRadiusTopStart="6dp"
-            app:circularflow_defaultRadius="6dp"
-            app:circularflow_radiusInDP="6dp"
-            app:hintEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RA_user_il_1">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/RA_user_if_2"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@color/background_app"
-                android:hint="@string/RA_second_field_prompt"
-                android:textAlignment="center"
-                android:textColor="@color/main_text_color"
-                android:textColorHint="@color/main_text_color"
-                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:textColor="@color/main_text_color"
+            android:textColorHint="@color/hint_text_color"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     </androidx.cardview.widget.CardView>
 
@@ -102,36 +74,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RA_CI_2">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RA_user_il_3"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/RA_user_if_password"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="30dp"
+            android:background="@color/background_app"
+            android:hint="@string/RA_third_field_prompt"
+            android:inputType="textPassword"
             android:textAlignment="center"
-            android:textColorHint="@color/secondary_text_color"
-            app:boxCornerRadiusBottomEnd="6dp"
-            app:boxCornerRadiusBottomStart="6dp"
-            app:boxCornerRadiusTopEnd="6dp"
-            app:boxCornerRadiusTopStart="6dp"
-            app:circularflow_defaultRadius="6dp"
-            app:circularflow_radiusInDP="6dp"
-            app:hintEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RA_user_il_2">
+            android:textColor="@color/main_text_color"
+            android:textColorHint="@color/hint_text_color"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/RA_user_if_3"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@color/background_app"
-                android:hint="@string/RA_third_field_prompt"
-                android:textAlignment="center"
-                android:textColor="@color/main_text_color"
-                android:textColorHint="@color/main_text_color"
-                tools:ignore="TouchTargetSizeCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/RA_CI_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RA_CI_3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/RA_user_if_repeat_password"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:background="@color/background_app"
+            android:hint="@string/RA_fourth_field_prompt"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textColor="@color/main_text_color"
+            android:textColorHint="@color/hint_text_color"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -143,23 +124,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon" />
-
-    <Button
-        android:id="@+id/RA_register_btn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="@color/btn_auth"
-        android:shadowRadius="6"
-        android:text="@string/RA_title"
-        android:textColor="@color/text_white"
-        app:circularflow_defaultRadius="6dp"
-        app:circularflow_radiusInDP="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RA_CI_3" />
+        app:srcCompat="@drawable/icon"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -169,7 +135,8 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo_icesi" />
+        app:srcCompat="@drawable/logo_icesi"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -180,5 +147,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/bu_white" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RA_CI_4">
+
+        <Button
+            android:id="@+id/RA_register_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/btn_auth"
+            android:shadowRadius="6"
+            android:text="@string/RA_btn_register"
+            android:textColor="@color/text_white"
+            app:circularflow_defaultRadius="6dp"
+            app:circularflow_radiusInDP="6dp" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,10 +18,11 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <!-- Strings used for register activity-->
-    <string name="RA_title">Registro</string>
-    <string name="RA_first_field_prompt">Usuario</string>
-    <string name="RA_second_field_prompt">Contraseña</string>
-    <string name="RA_third_field_prompt">Repetir contraseña</string>
+    <string name="RA_btn_register">Registro</string>
+    <string name="RA_first_field_prompt">Nombre</string>
+    <string name="RA_second_field_prompt">Correo institucional</string>
+    <string name="RA_third_field_prompt">Contraseña</string>
+    <string name="RA_fourth_field_prompt">Repetir contraseña</string>
 
 
     <!-- Strings used for login activity-->
