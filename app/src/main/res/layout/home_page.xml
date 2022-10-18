@@ -40,7 +40,7 @@
 
     <ScrollView
         android:id="@+id/AF_ma_sv"
-        android:layout_width="310dp"
+        android:layout_width="@dimen/card_container_width"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/HC_cd_a"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
@@ -93,11 +93,11 @@
                         android:id="@+id/AC_title_a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
+                        android:layout_marginStart="12dp"
                         android:layout_marginTop="8dp"
                         android:text="@string/HF_dummy_my_events_title1"
                         android:textColor="@color/main_text_color"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:typeface="sans"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -111,7 +111,7 @@
                         android:layout_marginEnd="12dp"
                         android:text="@string/HF_dummy_my_events_state1"
                         android:textColor="@color/main_text_color"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:typeface="sans"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -121,43 +121,45 @@
                         android:id="@+id/AC_classroom_a"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginStart="13dp"
-                        android:layout_marginTop="28dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="4dp"
                         android:text="@string/HF_dummy_my_events_classroom1"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="12sp"
                         android:typeface="sans"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/AC_title_a"
                         tools:text="@string/HF_dummy_my_events_classroom1" />
 
                     <TextView
                         android:id="@+id/AC_schedule_a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="28dp"
+                        android:layout_marginTop="4dp"
                         android:layout_marginEnd="12dp"
                         android:text="@string/HF_dummy_my_events_schedule1"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="12sp"
                         android:typeface="sans"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/AC_state_a"
                         tools:text="@string/HF_dummy_my_events_schedule1" />
 
                     <TextView
                         android:id="@+id/AC_description_a"
-                        android:layout_width="276dp"
-                        android:layout_height="51dp"
-                        android:layout_marginTop="60dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="8dp"
                         android:text="@string/HF_dummy_my_events_description1"
                         android:textAlignment="viewStart"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="11sp"
                         android:typeface="sans"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/HF_dummy_my_events_description1" />
 
                     <TextView
@@ -175,7 +177,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/HC_cd_b"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
@@ -199,7 +201,7 @@
                         android:id="@+id/textView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
+                        android:layout_marginStart="12dp"
                         android:layout_marginTop="8dp"
                         android:text="@string/HF_dummy_my_events_title2"
                         android:textColor="@color/main_text_color"
@@ -281,7 +283,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/HC_cd_c"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
@@ -389,7 +391,7 @@
     </ScrollView>
 
     <ScrollView
-        android:layout_width="300dp"
+        android:layout_width="@dimen/card_container_width"
         android:layout_height="300dp"
         android:layout_marginTop="424dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -404,10 +406,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/HF_se_a"
-                android:layout_width="130dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="@dimen/card_size_small"
+                android:layout_height="@dimen/card_size_small"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 app:cardBackgroundColor="@color/btn_secondary"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="5dp"
@@ -422,7 +424,7 @@
                         android:id="@+id/textView21A"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="8dp"
                         android:background="@color/panel_separator"
                         android:textColor="@color/panel_separator"
                         app:layout_constraintStart_toStartOf="parent"
@@ -432,12 +434,14 @@
                         android:id="@+id/textView9A"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="4dp"
                         android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
                         android:text="@string/HF_dummy_next_events_1_header"
                         android:textColor="@color/main_text_color"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:typeface="sans"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/HF_dummy_next_events_1_header" />
@@ -447,41 +451,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
-                        android:layout_marginTop="52dp"
+                        android:layout_marginBottom="4dp"
                         android:text="@string/HF_event_date"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="12sp"
                         android:typeface="sans"
+                        app:layout_constraintBottom_toTopOf="@+id/AF_na_fixed_schedule_a"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/HF_event_date" />
 
                     <TextView
                         android:id="@+id/textView19A"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="52dp"
                         android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
                         android:text="@string/HF_dummy_next_events_1_date"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="12sp"
                         android:typeface="sans"
+                        app:layout_constraintBottom_toTopOf="@+id/AF_na_dynamic_schedule_a"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/HF_dummy_next_events_1_date" />
 
                     <TextView
                         android:id="@+id/AF_na_dynamic_schedule_a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="76dp"
                         android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="16dp"
                         android:text="@string/HF_dummy_next_events_1_schedule"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="12sp"
                         android:typeface="sans"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/HF_dummy_next_events_1_schedule" />
 
                     <TextView
@@ -489,13 +493,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
-                        android:layout_marginTop="76dp"
+                        android:layout_marginBottom="16dp"
                         android:text="@string/HF_event_schedule"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="12sp"
                         android:typeface="sans"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/HF_event_schedule" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
