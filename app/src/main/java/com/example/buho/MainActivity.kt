@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setContentView(binding.root)
 
-        val homeFragment = HomeFragment()
-        val activitiesFragment = ActivitiesFragment()
+        val homeFragment = HomeFragment(binding.root)
+        val activitiesFragment = ActivitiesFragment(binding.root)
         val assistanceFragment = AssistanceFragment()
 
 

@@ -11,8 +11,9 @@ import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.example.buho.databinding.ActivitiesPageBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class ActivitiesFragment : Fragment(R.layout.activities_page) {
+class ActivitiesFragment(private val main : ConstraintLayout) : Fragment(R.layout.activities_page) {
     private var _binding: ActivitiesPageBinding?=null
     private val binding get()=_binding!!
 
@@ -71,17 +72,15 @@ class ActivitiesFragment : Fragment(R.layout.activities_page) {
         ).show(parentFragmentManager, "details")
     }
 
+    private fun goAssistance() {
+        (main[0] as BottomNavigationView).selectedItemId = R.id.assistenceItem
+    }
+
     private fun imHere(){
-        parentFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, AssistanceFragment())
-            commit()
-        }
+        goAssistance()
     }
 
     private fun imInterested(){
-        parentFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, AssistanceFragment())
-            commit()
-        }
+        goAssistance()
     }
 }
