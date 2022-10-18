@@ -2,6 +2,7 @@ package com.example.buho
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -12,7 +13,12 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.WindowManager.LayoutParams.FLAG_BLUR_BEHIND
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.findFragment
 import com.example.buho.databinding.DetailsBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import eightbitlab.com.blurview.BlurView
+import eightbitlab.com.blurview.RenderEffectBlur
+import eightbitlab.com.blurview.RenderScriptBlur
 
 class DetailsFragment constructor(
     private val tittle: String,
@@ -31,6 +37,10 @@ class DetailsFragment constructor(
             _binding = DetailsBinding.inflate(LayoutInflater.from(context))
             val view = binding.root;
 
+//            val radius = 15f;
+//
+//            binding.DEBlurBackdrop.setBlurRadius(radius).setBlurEnabled(true) // <-- Currently not working
+
             binding.DETitle.text = tittle;
             binding.DEState.text = state;
             binding.DEClassroom.text = classroom;
@@ -43,6 +53,10 @@ class DetailsFragment constructor(
                 dismiss()
             }
 
+            binding.DEImHere.setOnClickListener() {
+                imHere(it)
+            }
+
             val builder = AlertDialog.Builder(requireActivity())
             builder.setView(view)
 
@@ -51,22 +65,14 @@ class DetailsFragment constructor(
             return dialog
         }
 
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            _binding = DetailsBinding.inflate(inflater,container, false)
-            val view = binding.root;
+        private fun imHere(view: View) {
 
-            binding.DETitle.text = tittle;
-            binding.DEState.text = state;
-            binding.DEClassroom.text = classroom;
-            binding.DESchedule.text = schedule;
-            binding.DESpeakerType.text = speaker_type;
-            binding.DESpeakerName.text = speaker_name;
-            binding.DEDetails.text = details;
+            dismiss()
 
-            return view;
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fragmentContainer, AssistanceFragment())
+                commit()
+            }
         }
 
 }

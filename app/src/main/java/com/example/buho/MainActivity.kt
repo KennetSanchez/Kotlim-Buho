@@ -28,20 +28,23 @@ class MainActivity : AppCompatActivity() {
         setCurrentFragment(homeFragment)
 
 
-        binding.bottomNavigationView.setOnItemReselectedListener{menuItem->
+        binding.bottomNavigationView.setOnItemSelectedListener{menuItem->
             when(menuItem.itemId){
                 R.id.homeItem -> setCurrentFragment(homeFragment)
                 R.id.activitiesItem -> setCurrentFragment(activitiesFragment)
                 R.id.assistenceItem -> setCurrentFragment(assistanceFragment)
+                else -> {false}
             }
         }
     }
 
 
-    private fun setCurrentFragment(fragment: Fragment) {
+    private fun setCurrentFragment(fragment: Fragment) : Boolean {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragmentContainer, fragment)
             commit()
         }
+
+        return true
     }
 }
