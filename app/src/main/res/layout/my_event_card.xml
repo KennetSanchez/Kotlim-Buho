@@ -28,7 +28,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/HC_cl_a"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
@@ -36,14 +36,14 @@
             android:focusable="true">
 
             <TextView
-                android:id="@+id/MEC_tittle"
+                android:id="@+id/MEC_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/HF_dummy_my_events_title1"
                 android:textColor="@color/main_text_color"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:typeface="sans"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -56,7 +56,7 @@
                 android:layout_marginEnd="12dp"
                 android:text="@string/HF_dummy_my_events_state1"
                 android:textColor="@color/main_text_color"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:typeface="sans"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -66,19 +66,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="0dp"
                 android:text="@string/HF_dummy_my_events_classroom1"
                 android:textColor="@color/secondary_text_color"
                 android:textSize="12sp"
                 android:typeface="sans"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/MEC_tittle" />
+                app:layout_constraintTop_toBottomOf="@+id/MEC_title" />
 
             <TextView
                 android:id="@+id/MEC_schedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="12dp"
                 android:text="@string/HF_dummy_my_events_schedule1"
                 android:textColor="@color/secondary_text_color"
@@ -90,18 +90,20 @@
             <TextView
                 android:id="@+id/MEC_description"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="64dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
-                android:layout_marginBottom="8dp"
+                android:overScrollMode="ifContentScrolls"
                 android:text="@string/HF_dummy_my_events_description1"
                 android:textAlignment="viewStart"
                 android:textColor="@color/secondary_text_color"
-                android:textSize="11sp"
+                android:textIsSelectable="false"
+                android:textSize="12sp"
                 android:typeface="sans"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MEC_separator" />
 
             <TextView
                 android:id="@+id/MEC_separator"

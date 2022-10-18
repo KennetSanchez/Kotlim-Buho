@@ -3,7 +3,8 @@ package com.example.buho
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.widget.Toast
 import com.example.buho.databinding.ActivityLoginBinding
@@ -13,7 +14,7 @@ class LoginActivity : AppCompatActivity() {
         ActivityLoginBinding.inflate(layoutInflater)
     }
 
-    private var hidden : Boolean = false;
+    private var shown : Boolean = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,11 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.LALoginBtn.setOnClickListener{
+            login()
+        }
+    }
+
+    private fun login() {
             val username = binding.usernameET.text.toString()
             val pass = binding.passET.text.toString()
 
@@ -56,22 +62,23 @@ class LoginActivity : AppCompatActivity() {
 
                 toast.show()
             }
-        }
-
     }
 
     private fun toggle() {
+
         val newRes = when {
-            hidden -> R.drawable.eye_slash
-            else -> R.drawable.eye
-        }
-        binding.passET.inputType = when {
-            hidden -> InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            else -> InputType.TYPE_TEXT_VARIATION_PASSWORD
+            shown -> R.drawable.eye
+            else -> R.drawable.eye_slash
         }
 
-        Log.i(">>>", "${binding.passET.inputType}")
+//        findViewById<TextInputEditText>(R.id.passET).inputType
+
+        binding.passET.transformationMethod = when {
+            shown -> PasswordTransformationMethod.getInstance()
+            else -> HideReturnsTransformationMethod.getInstance()
+        }
+
         binding.passwordToggle.setImageResource(newRes)
-        hidden = !hidden
+        shown = !shown
     }
 }
