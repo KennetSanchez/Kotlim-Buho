@@ -16,5 +16,5 @@
     <color name="main_text_color">#001328</color>
     <color name="secondary_text_color">#082D55</color>
     <color name="panel_separator">#F0CE7A</color>
-
+    <color name="text_white">#F7F7F7</color>
 </resources>
