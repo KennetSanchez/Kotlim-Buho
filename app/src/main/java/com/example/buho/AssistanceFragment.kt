@@ -34,8 +34,6 @@ class AssistanceFragment : Fragment(R.layout.fragment_assistance) {
     private val startForResult=registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result: ActivityResult ->
                 if(result.resultCode== Activity.RESULT_OK){
-                    val intent= result.data
-                    val imageBitmap=intent?.extras?.get("data") as Bitmap
 
                 }
     }

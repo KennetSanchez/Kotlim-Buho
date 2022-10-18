@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/icons_outline"
+    tools:context=".RegisterActivity">
+
+    <Button
+        android:id="@+id/loginBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="136dp"
+        android:background="@color/btn_secondary"
+        android:backgroundTint="@color/bkg_auth"
+        android:text="@string/Register"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passET3" />
+
+    <EditText
+        android:id="@+id/passET2"
+        android:layout_width="243dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="@string/LA_PassETHint"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/passET3"
+        app:layout_constraintEnd_toEndOf="@+id/passET3"
+        app:layout_constraintStart_toStartOf="@+id/passET3"
+        app:layout_constraintTop_toBottomOf="@+id/usernameET2" />
+
+    <EditText
+        android:id="@+id/passET3"
+        android:layout_width="243dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="257dp"
+        android:ems="10"
+        android:hint="@string/Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passET2" />
+
+    <EditText
+        android:id="@+id/usernameET2"
+        android:layout_width="222dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="@string/LA_UsernameETHint"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/passET"
+        app:layout_constraintEnd_toEndOf="@+id/passET2"
+        app:layout_constraintStart_toStartOf="@+id/passET2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="170dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="79dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/Register"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/usernameET2"
+        app:layout_constraintEnd_toEndOf="@+id/usernameET2"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toStartOf="@+id/usernameET2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.595"
+        tools:text="@string/Register" />
+</androidx.constraintlayout.widget.ConstraintLayout>
