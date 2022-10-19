@@ -1,4 +1,4 @@
-package com.example.buho
+package com.example.buho.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.widget.Toast
+import com.example.buho.R
 import com.example.buho.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

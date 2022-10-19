@@ -1,9 +1,12 @@
-package com.example.buho
+package com.example.buho.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.buho.fragments.ActivitiesFragment
+import com.example.buho.fragments.AssistanceFragment
+import com.example.buho.fragments.HomeFragment
+import com.example.buho.R
 import com.example.buho.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

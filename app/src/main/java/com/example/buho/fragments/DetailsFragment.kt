@@ -1,13 +1,13 @@
-package com.example.buho
+package com.example.buho.fragments
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
-import android.view.View
 import android.view.WindowManager.LayoutParams.FLAG_BLUR_BEHIND
 import androidx.fragment.app.DialogFragment
+import com.example.buho.R
 import com.example.buho.databinding.DetailsBinding
 
 class DetailsFragment(

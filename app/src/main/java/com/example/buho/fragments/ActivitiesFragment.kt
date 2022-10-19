@@ -1,4 +1,4 @@
-package com.example.buho
+package com.example.buho.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
+import com.example.buho.R
 import com.example.buho.databinding.ActivitiesPageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

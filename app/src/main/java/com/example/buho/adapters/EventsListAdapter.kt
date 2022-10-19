@@ -1,9 +1,14 @@
-package com.example.buho
+package com.example.buho.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
+import com.example.buho.fragments.DetailsFragment
+import com.example.buho.fragments.HomeFragment
+import com.example.buho.models.MyEventCardComponent
+import com.example.buho.R
+import com.example.buho.viewholders.EventsViewHolder
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class EventsListAdapter(private val home: HomeFragment) : RecyclerView.Adapter<EventsViewHolder>() {

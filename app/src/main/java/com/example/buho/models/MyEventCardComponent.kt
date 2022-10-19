@@ -1,4 +1,4 @@
-package com.example.buho
+package com.example.buho.models
 
 class MyEventCardComponent (
     val title: String,

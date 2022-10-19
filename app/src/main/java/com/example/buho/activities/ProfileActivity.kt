@@ -1,4 +1,4 @@
-package com.example.buho
+package com.example.buho.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
