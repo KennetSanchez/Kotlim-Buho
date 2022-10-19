@@ -12,6 +12,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:elevation="10dp"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
@@ -29,9 +30,6 @@
             android:id="@+id/HC_cl_a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
             android:clickable="true"
             android:focusable="true">
 
