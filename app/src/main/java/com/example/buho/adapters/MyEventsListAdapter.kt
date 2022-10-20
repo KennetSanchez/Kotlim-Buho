@@ -11,18 +11,18 @@ import com.example.buho.R
 import com.example.buho.viewholders.EventsViewHolder
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class EventsListAdapter(private val home: HomeFragment) : RecyclerView.Adapter<EventsViewHolder>() {
+class MyEventsListAdapter(private val home: HomeFragment) : RecyclerView.Adapter<EventsViewHolder>() {
 
-    private val cards = ArrayList<MyEventCardComponent>()
+    private val myEventsCards = ArrayList<MyEventCardComponent>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
-        val inflator = LayoutInflater.from(parent.context)
-        val view = inflator.inflate(R.layout.my_event_card, parent, false)
+        val inflater = LayoutInflater.from(parent.context)
+        val view = inflater.inflate(R.layout.my_event_card, parent, false)
         return EventsViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
-        val cardN = cards[position]
+        val cardN = myEventsCards[position]
         holder.title.text = cardN.title
         holder.state.text = cardN.state
         holder.classroom.text = cardN.classroom
@@ -50,11 +50,11 @@ class EventsListAdapter(private val home: HomeFragment) : RecyclerView.Adapter<E
     }
 
     override fun getItemCount(): Int {
-        return cards.size
+        return myEventsCards.size
     }
 
     fun addCard(cardComponent: MyEventCardComponent) {
-        cards.add(cardComponent)
+        myEventsCards.add(cardComponent)
 
     }
 }

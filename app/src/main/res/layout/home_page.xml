@@ -19,7 +19,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="sans"
-        app:layout_constraintBottom_toTopOf="@+id/AF_ma_rv"
+        app:layout_constraintBottom_toTopOf="@+id/HF_me_rv"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -36,14 +36,14 @@
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AF_ma_rv" />
+        app:layout_constraintTop_toBottomOf="@+id/HF_me_rv" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/AF_ma_rv"
+        android:id="@+id/HF_me_rv"
         android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_height="@dimen/recycler_view_height"
+        android:layout_marginStart="@dimen/recycler_view_margins_x"
+        android:layout_marginEnd="@dimen/recycler_view_margins_x"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

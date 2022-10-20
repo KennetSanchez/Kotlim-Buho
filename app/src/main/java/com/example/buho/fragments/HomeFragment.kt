@@ -13,14 +13,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.models.MyEventCardComponent
 import com.example.buho.R
-import com.example.buho.adapters.EventsListAdapter
+import com.example.buho.adapters.MyEventsListAdapter
 import com.example.buho.databinding.HomePageBinding
 
 class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
     private var _binding: HomePageBinding?=null
     private val binding get()=_binding!!
 
-    private val myEventsAdapter = EventsListAdapter(this)
+    private val myEventsAdapter = MyEventsListAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +29,7 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
         _binding = HomePageBinding.inflate(inflater,container, false)
         val view = binding.root;
 
-        val myEventsRV = binding.AFMaRv
+        val myEventsRV = binding.HFMeRv
         myEventsRV.setHasFixedSize(true)
         myEventsRV.layoutManager = LinearLayoutManager(activity)
         myEventsRV.adapter = myEventsAdapter
