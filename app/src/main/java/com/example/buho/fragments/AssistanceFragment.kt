@@ -11,10 +11,10 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.buho.R
-import com.example.buho.databinding.FragmentAssistanceBinding
+import com.example.buho.databinding.AssistancePageBinding
 
-class AssistanceFragment : Fragment(R.layout.fragment_assistance) {
-    private var _binding: FragmentAssistanceBinding?=null
+class AssistanceFragment : Fragment(R.layout.assistance_page) {
+    private var _binding: AssistancePageBinding?=null
     private val binding get()=_binding!!
 
     override fun onCreateView(
@@ -22,7 +22,7 @@ class AssistanceFragment : Fragment(R.layout.fragment_assistance) {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding= FragmentAssistanceBinding.inflate(inflater,container, false)
+        _binding= AssistancePageBinding.inflate(inflater,container, false)
         val view= binding.root;
         binding.qrScanBtn.setOnClickListener{
             startForResult.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))

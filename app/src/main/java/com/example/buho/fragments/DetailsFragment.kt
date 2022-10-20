@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.WindowManager.LayoutParams.FLAG_BLUR_BEHIND
 import androidx.fragment.app.DialogFragment
 import com.example.buho.R
-import com.example.buho.databinding.DetailsBinding
+import com.example.buho.databinding.DetailsDialogBinding
 
 class DetailsFragment(
     private val tittle: String,
@@ -20,13 +20,13 @@ class DetailsFragment(
     private val details: String,
     private val mainButtonText: String,
     private val onClickMethod: () -> Unit
-) :  DialogFragment(R.layout.details) {
-        private var _binding: DetailsBinding?=null
+) :  DialogFragment(R.layout.details_dialog) {
+        private var _binding: DetailsDialogBinding?=null
         private val binding get()=_binding!!
 
         override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
             FLAG_BLUR_BEHIND
-            _binding = DetailsBinding.inflate(LayoutInflater.from(context))
+            _binding = DetailsDialogBinding.inflate(LayoutInflater.from(context))
             val view = binding.root;
 
 //            val radius = 15f;

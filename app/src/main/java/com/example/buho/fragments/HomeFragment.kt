@@ -61,10 +61,10 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
         ),
             getString(R.string.HF_dummy_my_events_schedule2), getString(R.string.HF_dummy_my_events_description2))
 
-        val card3 = MyEventCardComponent(getString(R.string.HF_dummy_my_events_title2), getString(R.string.HF_dummy_my_events_state2), getString(
-            R.string.HF_dummy_my_events_classroom2
+        val card3 = MyEventCardComponent(getString(R.string.HF_dummy_my_events_title3), getString(R.string.HF_dummy_my_events_state3), getString(
+            R.string.HF_dummy_my_events_classroom3
         ),
-                    getString(R.string.HF_dummy_my_events_schedule2), getString(R.string.HF_dummy_my_events_description2))
+                    getString(R.string.HF_dummy_my_events_schedule3), getString(R.string.HF_dummy_my_events_description3))
 
         myEventsAdapter.addCard(card1)
         myEventsAdapter.addCard(card2)
@@ -112,10 +112,12 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
 
         val newCard = MyEventCardComponent(
             dialogParams[0],
-            "Próximamente",
-            "ICESI",
-            dialogParams[4], getString(R.string.HF_dummy_my_events_description2))
+            dialogParams[1],
+            dialogParams[2],
+            dialogParams[3],
+            dialogParams[4],
 
+            )
         myEventsAdapter.addCard(newCard)
         myEventsAdapter.notifyDataSetChanged()
     }

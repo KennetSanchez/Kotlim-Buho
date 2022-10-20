@@ -8,11 +8,11 @@ import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.widget.Toast
 import com.example.buho.R
-import com.example.buho.databinding.ActivityLoginBinding
+import com.example.buho.databinding.LoginPageBinding
 
 class LoginActivity : AppCompatActivity() {
-    private val binding:ActivityLoginBinding by lazy{
-        ActivityLoginBinding.inflate(layoutInflater)
+    private val binding:LoginPageBinding by lazy{
+        LoginPageBinding.inflate(layoutInflater)
     }
 
     private var shown : Boolean = false;

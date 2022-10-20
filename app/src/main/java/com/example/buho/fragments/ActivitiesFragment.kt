@@ -54,20 +54,14 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
 
 
     private fun createDummyInfo(){
-        val card1 = MyActivityCardComponent(getString(R.string.HF_dummy_my_events_title1), getString(R.string.HF_dummy_my_events_state1), getString(
-            R.string.HF_dummy_my_events_classroom1
-        ),
-            getString(R.string.HF_dummy_my_events_schedule1), getString(R.string.HF_dummy_my_events_description1))
+        val card1 = MyActivityCardComponent(getString(R.string.AF_dummy_my_activities_title_1), getString(R.string.AF_dummy_my_activities_day_1), getString(
+            R.string.AF_dummy_my_activities_classroom_1), getString(R.string.AF_dummy_my_activities_schedule_1), getString(R.string.AF_dummy_my_activities_teacher_1))
 
-        val card2 = MyActivityCardComponent(getString(R.string.HF_dummy_my_events_title2), getString(R.string.HF_dummy_my_events_state2), getString(
-            R.string.HF_dummy_my_events_classroom2
-        ),
-            getString(R.string.HF_dummy_my_events_schedule2), getString(R.string.HF_dummy_my_events_description2))
+        val card2 = MyActivityCardComponent(getString(R.string.AF_dummy_my_activities_title_2), getString(R.string.AF_dummy_my_activities_day_2), getString(
+            R.string.AF_dummy_my_activities_classroom_2), getString(R.string.AF_dummy_my_activities_schedule_2), getString(R.string.AF_dummy_my_activities_teacher_2))
 
-        val card3 = MyActivityCardComponent(getString(R.string.HF_dummy_my_events_title2), getString(R.string.HF_dummy_my_events_state2), getString(
-            R.string.HF_dummy_my_events_classroom2
-        ),
-            getString(R.string.HF_dummy_my_events_schedule2), getString(R.string.HF_dummy_my_events_description2))
+        val card3 = MyActivityCardComponent(getString(R.string.AF_dummy_my_activities_title_3), getString(R.string.AF_dummy_my_activities_day_3), getString(
+            R.string.AF_dummy_my_activities_classroom_3), getString(R.string.AF_dummy_my_activities_schedule_3), getString(R.string.AF_dummy_my_activities_teacher_3))
 
         myActivitiesAdapter.addCard(card1)
         myActivitiesAdapter.addCard(card2)
@@ -91,9 +85,9 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
             state =  dialogParams[1],
             classroom =  dialogParams[2],
             schedule =  dialogParams[3],
-            details =  dialogParams[4],
-            speaker_type =  "Ponente: ",
-            speaker_name =  "John Doe",
+            details =  "Ven a disfrutar con Bienestar Universitario",
+            speaker_type =  "Profesor: ",
+            speaker_name =  dialogParams[4],
             mainButtonText = "Seguir evento",
             onClickMethod = { imInterested(view) }
         ).show(parentFragmentManager, "details")
@@ -115,52 +109,13 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
 
         val newCard = MyActivityCardComponent(
             dialogParams[0],
-            "Próximamente",
-            "ICESI",
-            dialogParams[4], getString(R.string.HF_dummy_my_events_description2))
+            dialogParams[1],
+            dialogParams[2],
+            dialogParams[3],
+            dialogParams[4]
+        )
 
         myActivitiesAdapter.addCard(newCard)
         myActivitiesAdapter.notifyDataSetChanged()
-    }
-    
-    private fun showDetails(view : View, buttonText : String, function_to_execute : () -> Unit){
-        val cl = view as ConstraintLayout
-        val textsArrays = cl.children
-
-        val dialogParams : ArrayList<String> = ArrayList()
-        textsArrays.forEach{
-            val currentText = it as TextView
-
-            if(currentText.text != ""){
-                dialogParams.add(currentText.text as String)
-            }
-        }
-
-        DetailsFragment(
-            tittle = dialogParams[0],
-            state =  dialogParams[1],
-            classroom =  dialogParams[2],
-            schedule =  dialogParams[3],
-            speaker_type =  "Profesor: ",
-
-            //Not implemented yet
-            speaker_name =  "John Doe",
-
-            details =  dialogParams[4],
-            mainButtonText = buttonText,
-            onClickMethod = function_to_execute
-        ).show(parentFragmentManager, "details")
-    }
-
-    private fun goAssistance() {
-        (main[0] as BottomNavigationView).selectedItemId = R.id.assistenceItem
-    }
-
-    private fun imHere(){
-        goAssistance()
-    }
-
-    private fun imInterested(){
-        goAssistance()
     }
 }

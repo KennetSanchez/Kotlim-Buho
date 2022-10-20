@@ -2,11 +2,11 @@ package com.example.buho.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.buho.databinding.ActivityProfileBinding
+import com.example.buho.databinding.ProfilePageBinding
 
 class ProfileActivity : AppCompatActivity() {
-    private val binding:ActivityProfileBinding by lazy{
-        ActivityProfileBinding.inflate(layoutInflater)
+    private val binding:ProfilePageBinding by lazy{
+        ProfilePageBinding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

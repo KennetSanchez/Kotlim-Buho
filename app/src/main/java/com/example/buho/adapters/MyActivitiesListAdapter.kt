@@ -8,9 +8,7 @@ import com.example.buho.R
 import com.example.buho.fragments.ActivitiesFragment
 import com.example.buho.fragments.DetailsFragment
 import com.example.buho.models.MyActivityCardComponent
-import com.example.buho.models.MyEventCardComponent
 import com.example.buho.viewholders.ActivitiesViewHolder
-import com.example.buho.viewholders.EventsViewHolder
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MyActivitiesListAdapter (private val activities : ActivitiesFragment): RecyclerView.Adapter<ActivitiesViewHolder>() {
