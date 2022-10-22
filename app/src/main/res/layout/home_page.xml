@@ -67,7 +67,7 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/HF_se_a"
+                android:id="@+id/Card_suggested"
                 android:layout_width="@dimen/card_size_small"
                 android:layout_height="@dimen/card_size_small"
                 android:layout_marginStart="16dp"
@@ -274,7 +274,7 @@
                 app:cardCornerRadius="6dp"
                 app:cardElevation="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/HF_se_a">
+                app:layout_constraintTop_toBottomOf="@+id/Card_suggested">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

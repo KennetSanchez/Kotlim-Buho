@@ -1,0 +1,9 @@
+# Buho App
+
+### Disclaimer
+The default credentials to use the application without registering are:
+
+    User -> Domi
+    Password -> 123456
+
+Once the authentication is implemented this user will be replaced by one that meets the conditions that the registration form must have.

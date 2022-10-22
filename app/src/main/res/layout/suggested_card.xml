@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:id="@+id/HF_se_a"
+<androidx.cardview.widget.CardView android:id="@+id/Card_suggested"
     android:layout_width="@dimen/card_size_small"
     android:layout_height="@dimen/card_size_small"
     android:layout_marginStart="16dp"
