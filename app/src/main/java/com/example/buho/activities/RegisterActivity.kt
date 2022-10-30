@@ -2,8 +2,13 @@ package com.example.buho.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.buho.databinding.ActivityRegisterBinding
+import com.example.buho.models.User
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
@@ -23,12 +28,38 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.RARegisterBtn.setOnClickListener {
-            if(validations()){
-                Toast.makeText(applicationContext, "Usuario registrado exitosamente", Toast.LENGTH_LONG).show()
-            }
-            super.finish()
+            registerUser()
         }
     }
+
+    private fun registerUser(){
+        val email =  binding.RAUserIfInstitutionalEmail.text.toString()
+        val password = binding.RAUserIfPassword.text.toString()
+
+        Firebase.auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
+            val id = Firebase.auth.currentUser?.uid
+            val user = User(id!!, binding.RAUserIfName.text.toString(), email, password)
+
+            Firebase.firestore.collection("users").document(id).set(user).addOnSuccessListener {
+                Toast.makeText(applicationContext, "Usuario registrado exitosamente", Toast.LENGTH_LONG).show()
+                sendVerificationEmail()
+            }.addOnFailureListener{
+                Toast.makeText(applicationContext, it.message.toString(), Toast.LENGTH_LONG).show()
+            }
+        }.addOnFailureListener{
+            Toast.makeText(applicationContext, it.message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun sendVerificationEmail(){
+        Firebase.auth.currentUser?.sendEmailVerification()?.addOnSuccessListener {
+            Toast.makeText(this, "Para completar el registro verifique su correo", Toast.LENGTH_LONG).show()
+        }?.addOnFailureListener {
+            Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+        }
+
+    }
+
     private fun validations(): Boolean {
         var temp:Boolean = true
         val validation = arrayOf<String>(
@@ -37,10 +68,10 @@ class RegisterActivity : AppCompatActivity() {
             binding.RAUserIfPassword.text.toString(),
             binding.RAUserIfRepeatPassword.text.toString()
         )
-        var aux=binding.RAUserIfInstitutionalEmail.text.toString().split("@")
+        val aux=binding.RAUserIfInstitutionalEmail.text.toString().split("@")
 
         for (i in validation.indices) {
-            if(validation[i]=="" || validation[i]==null){
+            if(validation[i]=="" || validation[i]==null ){
                 Toast.makeText(applicationContext, "No se permiten espacios vacios", Toast.LENGTH_LONG).show()
                 temp=false
             }
@@ -49,7 +80,7 @@ class RegisterActivity : AppCompatActivity() {
                 temp=false
             }
             if(!(i==1 && aux.size==2 && aux[aux.size-1].contains("u.icesi.edu.co"))){
-                Toast.makeText(applicationContext, "El correo institucional debe ser un correo valido como: ejemplo@u.icesi.edu.co", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "El correo institucional debe pertenecer a la universidad icesi como: ejemplo@u.icesi.edu.co", Toast.LENGTH_LONG).show()
                 temp=false
             }
             if(validation[2] != validation[3]){

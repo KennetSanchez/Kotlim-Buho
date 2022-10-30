@@ -22,8 +22,6 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        Log.i(">>>", "${binding.passET.inputType}")
-
         binding.passwordToggle.setOnClickListener {
             toggle()
         }
@@ -40,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun login() {
             val username = binding.usernameET.text.toString()
-            val pass = binding.passET.text.toString()
+            val pass = binding.RAUserIfPassword.text.toString()
 
             val usernameAndPassEmpty = "Mi loco, complicado iniciar sesión si no metés datos"
             val usernameEmpty = "¿Quién chota sos?"
@@ -74,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
 
 //        findViewById<TextInputEditText>(R.id.passET).inputType
 
-        binding.passET.transformationMethod = when {
+        binding.RAUserIfPassword.transformationMethod = when {
             shown -> PasswordTransformationMethod.getInstance()
             else -> HideReturnsTransformationMethod.getInstance()
         }
