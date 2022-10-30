@@ -78,7 +78,7 @@
             android:paddingStart="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passET"
+                android:id="@+id/RA_user_if_password"
                 android:layout_width="@dimen/input_width"
                 android:layout_height="@dimen/input_height"
                 android:autofillHints="password"
@@ -100,7 +100,7 @@
                 android:layout_height="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/passET"
+                app:layout_constraintStart_toEndOf="@+id/RA_user_if_password"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/eye" />
 

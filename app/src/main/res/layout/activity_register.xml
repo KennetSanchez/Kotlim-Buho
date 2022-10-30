@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/RA_CI_2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passET"
+            android:id="@+id/RA_user_if_password"
             android:layout_width="250dp"
             android:layout_height="30dp"
             android:background="@color/background_app"
