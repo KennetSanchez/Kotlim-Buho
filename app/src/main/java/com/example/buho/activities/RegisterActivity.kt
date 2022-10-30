@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun registerUser(){
         val email =  binding.RAUserIfInstitutionalEmail.text.toString()
-        val password = binding.RAUserIfPassword.text.toString()
+        val password = binding.RAPassword.text.toString()
 
         Firebase.auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
             val id = Firebase.auth.currentUser?.uid
@@ -65,7 +65,7 @@ class RegisterActivity : AppCompatActivity() {
         val validation = arrayOf<String>(
             binding.RAUserIfName.text.toString(),
             binding.RAUserIfInstitutionalEmail.text.toString(),
-            binding.RAUserIfPassword.text.toString(),
+            binding.RAPassword.text.toString(),
             binding.RAUserIfRepeatPassword.text.toString()
         )
         val aux=binding.RAUserIfInstitutionalEmail.text.toString().split("@")
