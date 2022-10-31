@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    private lateinit var  user: User
+    private lateinit var user: User
 
 
     private fun loadUser():User?{
@@ -46,8 +46,6 @@ class MainActivity : AppCompatActivity() {
         val activitiesFragment = ActivitiesFragment(binding.root)
         val assistanceFragment = AssistanceFragment()
 
-
-
         setCurrentFragment(homeFragment)
 
         val user = loadUser()
@@ -70,6 +68,15 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        binding.logoutIV.setOnClickListener {
+            finish()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            val sp = getSharedPreferences("Buho", MODE_PRIVATE)
+            sp.edit().clear().apply()
+            Firebase.auth.signOut()
         }
     }
 

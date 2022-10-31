@@ -27,13 +27,15 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/logout_IV"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/box_arrow_left" />
+                app:srcCompat="@drawable/box_arrow_left"
+                android:clickable="true"
+                android:focusable="true" />
 
             <ImageView
                 android:id="@+id/imageView8"
