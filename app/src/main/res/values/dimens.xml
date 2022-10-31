@@ -16,5 +16,5 @@
     <dimen name="activity_card_container_height">100dp</dimen>
     <dimen name="default_cards_radius">6dp</dimen>
     <dimen name="recycler_view_height">300dp</dimen>
-    <dimen name="recycler_view_margins_x">24dp</dimen>
+    <dimen name="recycler_view_margins_x">16dp</dimen>
 </resources>
