@@ -27,7 +27,7 @@
 
     <!-- Strings used for login activity-->
     <string name="LA_LoginBtn">Iniciar sesión</string>
-    <string name="LA_UsernameETHint">Usuario</string>
+    <string name="LA_UsernameETHint">Correo institucional</string>
     <string name="LA_PassETHint">Contraseña</string>
     <string name="LA_Title">BuHo</string>
     <string name="LA_dummy_un">Domi</string>

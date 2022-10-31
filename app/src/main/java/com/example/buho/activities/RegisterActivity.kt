@@ -28,7 +28,8 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.RARegisterBtn.setOnClickListener {
-            registerUser()
+            if(validateName() && validateEmail() && validatePassword() && validateEqualPasswords())
+                registerUser()
         }
     }
 
@@ -42,6 +43,7 @@ class RegisterActivity : AppCompatActivity() {
 
             Firebase.firestore.collection("users").document(id).set(user).addOnSuccessListener {
                 Toast.makeText(applicationContext, "Usuario registrado exitosamente", Toast.LENGTH_LONG).show()
+                finish()
                 sendVerificationEmail()
             }.addOnFailureListener{
                 Toast.makeText(applicationContext, it.message.toString(), Toast.LENGTH_LONG).show()
@@ -60,39 +62,36 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
-    private fun validations(): Boolean {
-        var temp:Boolean = true
-        val validation = arrayOf<String>(
-            binding.RAUserIfName.text.toString(),
-            binding.RAUserIfInstitutionalEmail.text.toString(),
-            binding.RAPassword.text.toString(),
-            binding.RAUserIfRepeatPassword.text.toString()
-        )
-        val aux=binding.RAUserIfInstitutionalEmail.text.toString().split("@")
-
-        for (i in validation.indices) {
-            if(validation[i]=="" || validation[i]==null ){
-                Toast.makeText(applicationContext, "No se permiten espacios vacios", Toast.LENGTH_LONG).show()
-                temp=false
-            }
-            if(!(i==0 && nameValidator(validation[i]))){
-                Toast.makeText(applicationContext, "El nombre solo debe contener letras y espacios", Toast.LENGTH_LONG).show()
-                temp=false
-            }
-            if(!(i==1 && aux.size==2 && aux[aux.size-1].contains("u.icesi.edu.co"))){
-                Toast.makeText(applicationContext, "El correo institucional debe pertenecer a la universidad icesi como: ejemplo@u.icesi.edu.co", Toast.LENGTH_LONG).show()
-                temp=false
-            }
-            if(validation[2] != validation[3]){
-                Toast.makeText(applicationContext, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show()
-                temp=false
-            }
-        }
-        return temp
+    private fun validateName(): Boolean{
+        val str =  binding.RAUserIfName.text.toString()
+        val valid = Pattern.compile("[a-zA-z ]").matcher(str).find() && str.isNotEmpty()
+        if(!valid)
+            Toast.makeText(this, "El campo de nombre no está diligenciado correctamente", Toast.LENGTH_LONG).show()
+        return valid
     }
-    private fun nameValidator(text: String?): Boolean {
-        val p = Pattern.compile("/^[\\pL\\s]*\$/u")
-        val m = p.matcher(text)
-        return m.matches()
+
+    private fun validateEmail(): Boolean{
+        val str =  binding.RAUserIfInstitutionalEmail.text.toString()
+        val valid = Pattern.compile(".*(@U\\.ICESI\\.EDU\\.CO)$|.*(@u\\.icesi\\.edu\\.co)\$").matcher(str).find() && str.isNotEmpty()
+        if(!valid)
+            Toast.makeText(this, "El campo de email no está diligenciado correctamente", Toast.LENGTH_LONG).show()
+        return valid
+    }
+
+    private fun validatePassword(): Boolean{
+        val str =  binding.RAPassword.text.toString()
+        val valid = Pattern.compile("[a-zA-z0-9 ]").matcher(str).find() && str.isNotEmpty()
+        if(!valid)
+            Toast.makeText(this, "El campo de contraseña no está diligenciado correctamente", Toast.LENGTH_LONG).show()
+        return valid
+    }
+
+    private fun validateEqualPasswords(): Boolean{
+        val password =  binding.RAPassword.text.toString()
+        val repeatedPassword =  binding.RAUserIfRepeatPassword.text.toString()
+        val valid = password == repeatedPassword
+        if(!valid)
+            Toast.makeText(this, "Las contraseñas son distintas", Toast.LENGTH_LONG).show()
+        return valid
     }
 }
