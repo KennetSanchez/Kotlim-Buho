@@ -2,7 +2,10 @@ package com.example.buho.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Visibility
 import android.util.Log
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Toast
 import com.example.buho.databinding.ActivityRegisterBinding
 import com.example.buho.models.User
@@ -16,6 +19,8 @@ class RegisterActivity : AppCompatActivity() {
     private val binding: ActivityRegisterBinding by lazy{
         ActivityRegisterBinding.inflate(layoutInflater)
     }
+
+    private var registerStarted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -37,9 +42,12 @@ class RegisterActivity : AppCompatActivity() {
         val email =  binding.RAUserIfInstitutionalEmail.text.toString()
         val password = binding.RAPassword.text.toString()
 
+        toggleRegisterState()
+
         Firebase.auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
             val id = Firebase.auth.currentUser?.uid
             val user = User(id!!, binding.RAUserIfName.text.toString(), email, password)
+
 
             Firebase.firestore.collection("users").document(id).set(user).addOnSuccessListener {
                 Toast.makeText(applicationContext, "Usuario registrado exitosamente", Toast.LENGTH_LONG).show()
@@ -50,6 +58,14 @@ class RegisterActivity : AppCompatActivity() {
             }
         }.addOnFailureListener{
             Toast.makeText(applicationContext, it.message, Toast.LENGTH_LONG).show()
+        }
+        toggleRegisterState()
+    }
+
+    private fun toggleRegisterState(){
+        when (registerStarted){
+            false -> binding.registerLoadingPane.visibility = VISIBLE
+            true -> binding.registerLoadingPane.visibility = GONE
         }
     }
 
