@@ -2,6 +2,7 @@ package com.example.buho.models
 
 import java.io.Serializable
 
+
 data class User(
     var id:String = "",
     var name:String = "",
@@ -11,4 +12,5 @@ data class User(
     override fun toString(): String {
         return name
     }
+
 }
