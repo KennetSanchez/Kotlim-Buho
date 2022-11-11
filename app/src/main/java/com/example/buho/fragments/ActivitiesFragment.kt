@@ -14,16 +14,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.R
 import com.example.buho.adapters.MyActivitiesListAdapter
 import com.example.buho.adapters.MyEventsListAdapter
+import com.example.buho.adapters.SuggestedActivityListAdapter
 import com.example.buho.databinding.ActivitiesPageBinding
 import com.example.buho.models.MyActivityCardComponent
 import com.example.buho.models.MyEventCardComponent
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activities_page) {
     private var _binding: ActivitiesPageBinding?=null
     private val binding get()=_binding!!
 
     private val myActivitiesAdapter = MyActivitiesListAdapter(this)
+    private val activitiesAdapter = SuggestedActivityListAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +42,13 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         myActivitiesRV.layoutManager = LinearLayoutManager(activity)
         myActivitiesRV.adapter = myActivitiesAdapter
 
-        val cardsSuggestedEvents = binding.AFSACl.children
+        val activitiesRV = binding.AFSaRV
+        activitiesRV.setHasFixedSize(true)
+        activitiesRV.layoutManager = LinearLayoutManager(activity)
+        activitiesRV.adapter = activitiesAdapter
+
+
+        val cardsSuggestedEvents = binding.AFMaRV.children
 
         cardsSuggestedEvents.forEach { child ->
             child as CardView
@@ -51,7 +62,6 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
 
         return view
     }
-
 
     private fun createDummyInfo(){
         val card1 = MyActivityCardComponent(getString(R.string.AF_dummy_my_activities_title_1), getString(R.string.AF_dummy_my_activities_day_1), getString(
@@ -114,6 +124,8 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
             dialogParams[3],
             dialogParams[4]
         )
+
+        Firebase.firestore.collection("users").document(Firebase.auth.currentUser!!.uid).collection("interestedActivities")
 
         myActivitiesAdapter.addCard(newCard)
         myActivitiesAdapter.notifyDataSetChanged()

@@ -157,4 +157,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="Register" >Register</string>
     <string name="icon_description">Buho placeholder icon</string>
+    <string name="MAC_speaker_type">"Profesor: "</string>
+    <string name="MAC_button_text">Estoy aquí</string>
+    <string name="MEC_speaker_type">"Ponente: "</string>
 </resources>

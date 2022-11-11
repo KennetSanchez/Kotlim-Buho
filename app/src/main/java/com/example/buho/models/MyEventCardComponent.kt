@@ -1,9 +1,11 @@
 package com.example.buho.models
 
-class MyEventCardComponent (
-    val title: String,
-    val state: String,
-    val classroom: String,
-    val schedule: String,
-    val description: String
-) {}
+import java.io.Serializable
+
+data class MyEventCardComponent (
+    var title : String = "",
+    var state: String = "",
+    var classroom: String = "",
+    var schedule: String = "",
+    var description: String = ""
+): Serializable {}
