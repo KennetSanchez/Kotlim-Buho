@@ -1,10 +1,12 @@
 package com.example.buho.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
@@ -18,10 +20,14 @@ import com.example.buho.adapters.SuggestedActivityListAdapter
 import com.example.buho.databinding.ActivitiesPageBinding
 import com.example.buho.models.MyActivityCardComponent
 import com.example.buho.models.MyEventCardComponent
+import com.example.buho.models.SuggestedEventComponent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.tasks.await
 
 class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activities_page) {
     private var _binding: ActivitiesPageBinding?=null
@@ -34,6 +40,8 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         _binding = ActivitiesPageBinding.inflate(inflater,container, false)
         val view = binding.root;
 
@@ -41,6 +49,8 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         myActivitiesRV.setHasFixedSize(true)
         myActivitiesRV.layoutManager = LinearLayoutManager(activity)
         myActivitiesRV.adapter = myActivitiesAdapter
+
+        loadActivities()
 
         val activitiesRV = binding.AFSaRV
         activitiesRV.setHasFixedSize(true)
@@ -61,6 +71,20 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         }
 
         return view
+    }
+
+    private fun loadActivities(){
+        val activities = ArrayList<SuggestedEventComponent>()
+
+        Firebase.firestore.collection("activities").get().addOnSuccessListener{
+            for (document in it.documents) {
+                val obj = document.toObject(SuggestedEventComponent::class.java)
+                activities.add(obj!!)
+            }
+            Log.e(">>>", activities[0].toString())
+        }
+
+
     }
 
     private fun createDummyInfo(){
