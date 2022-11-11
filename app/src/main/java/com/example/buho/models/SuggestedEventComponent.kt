@@ -1,6 +1,5 @@
 package com.example.buho.models
 
-
 import java.io.Serializable
 
 data class SuggestedEventComponent (

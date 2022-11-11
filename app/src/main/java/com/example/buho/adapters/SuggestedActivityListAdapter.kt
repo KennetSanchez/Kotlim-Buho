@@ -17,7 +17,7 @@ class SuggestedActivityListAdapter (private val activities : ActivitiesFragment)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuggestedEventViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.my_activity_card, parent, false)
+        val view = inflater.inflate(R.layout.suggested_card, parent, false)
         return SuggestedEventViewHolder(view)
     }
 

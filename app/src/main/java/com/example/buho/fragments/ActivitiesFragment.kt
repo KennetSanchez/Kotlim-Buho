@@ -41,7 +41,6 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         savedInstanceState: Bundle?
     ): View? {
 
-
         _binding = ActivitiesPageBinding.inflate(inflater,container, false)
         val view = binding.root;
 
@@ -50,13 +49,13 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         myActivitiesRV.layoutManager = LinearLayoutManager(activity)
         myActivitiesRV.adapter = myActivitiesAdapter
 
-        loadActivities()
 
         val activitiesRV = binding.AFSaRV
         activitiesRV.setHasFixedSize(true)
         activitiesRV.layoutManager = LinearLayoutManager(activity)
         activitiesRV.adapter = activitiesAdapter
 
+        loadActivities()
 
         val cardsSuggestedEvents = binding.AFMaRV.children
 
@@ -74,17 +73,15 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
     }
 
     private fun loadActivities(){
-        val activities = ArrayList<SuggestedEventComponent>()
-
         Firebase.firestore.collection("activities").get().addOnSuccessListener{
             for (document in it.documents) {
                 val obj = document.toObject(SuggestedEventComponent::class.java)
-                activities.add(obj!!)
+                activitiesAdapter.addCard(obj!!)
             }
-            Log.e(">>>", activities[0].toString())
+                activitiesAdapter.notifyDataSetChanged()
+        }.addOnFailureListener{
+            Log.e("<<<", it.message.toString())
         }
-
-
     }
 
     private fun createDummyInfo(){
@@ -100,7 +97,9 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         myActivitiesAdapter.addCard(card1)
         myActivitiesAdapter.addCard(card2)
         myActivitiesAdapter.addCard(card3)
+
     }
+
 
     private fun showDetails(view : View){
         val cl = view as ConstraintLayout
