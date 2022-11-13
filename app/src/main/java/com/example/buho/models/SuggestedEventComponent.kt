@@ -8,5 +8,5 @@ data class SuggestedEventComponent (
     var description: String = "",
     var classroom: String = "",
     var schedule: String = "",
-    var teacher: String = ""
+    var professor: String = ""
 ): Serializable {}

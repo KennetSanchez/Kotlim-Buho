@@ -1,6 +1,7 @@
 package com.example.buho.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +15,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.models.MyEventCardComponent
 import com.example.buho.R
 import com.example.buho.adapters.MyEventsListAdapter
+import com.example.buho.adapters.SuggestedActivityListAdapter
+import com.example.buho.adapters.SuggestedEventListAdapter
 import com.example.buho.databinding.HomePageBinding
+import com.example.buho.models.SuggestedEventComponent
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
+import com.google.firestore.v1.DocumentChange
 
 class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
     private var _binding: HomePageBinding?=null
     private val binding get()=_binding!!
 
     private val myEventsAdapter = MyEventsListAdapter(this)
+    private val eventsAdapter = SuggestedEventListAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +44,15 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
         myEventsRV.layoutManager = LinearLayoutManager(activity)
         myEventsRV.adapter = myEventsAdapter
 
-        val cardsSuggestedEvents = binding.HPSECl.children
+
+        val eventsRV = binding.HFEvRv
+        eventsRV.setHasFixedSize(true)
+        eventsRV.layoutManager = LinearLayoutManager(activity)
+        eventsRV.adapter = eventsAdapter
+
+        loadEvents()
+
+        val cardsSuggestedEvents = binding.HFMeRv.children
 
         cardsSuggestedEvents.forEach { child ->
             child as CardView
@@ -49,6 +67,23 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
         return view
     }
 
+    private fun loadEvents(){
+        Firebase.firestore.collection("events").get().addOnSuccessListener{
+
+            val events = ArrayList<SuggestedEventComponent>()
+            for (document in it.documents) {
+                val obj = document.toObject<SuggestedEventComponent>()
+                events.add(obj!!)
+            }
+
+            eventsAdapter.setDataSet(events)
+            eventsAdapter.notifyDataSetChanged()
+
+        }.addOnFailureListener{
+            Log.e("<<<", it.message.toString())
+        }
+
+    }
 
     private fun createDummyInfo(){
         val card1 = MyEventCardComponent(getString(R.string.HF_dummy_my_events_title1), getString(R.string.HF_dummy_my_events_state1), getString(
@@ -85,7 +120,7 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
 
         DetailsFragment(
             tittle = dialogParams[0],
-            state =  dialogParams[1],
+            date =  dialogParams[1],
             classroom =  dialogParams[2],
             schedule =  dialogParams[3],
             details =  dialogParams[4],
@@ -116,7 +151,6 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
             dialogParams[2],
             dialogParams[3],
             dialogParams[4],
-
             )
         myEventsAdapter.addCard(newCard)
         myEventsAdapter.notifyDataSetChanged()

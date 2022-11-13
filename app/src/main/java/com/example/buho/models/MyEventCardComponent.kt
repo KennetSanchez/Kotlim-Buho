@@ -4,7 +4,7 @@ import java.io.Serializable
 
 data class MyEventCardComponent (
     var title : String = "",
-    var state: String = "",
+    var date: String = "",
     var classroom: String = "",
     var schedule: String = "",
     var description: String = ""

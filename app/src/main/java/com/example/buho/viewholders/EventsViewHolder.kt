@@ -8,7 +8,7 @@ import com.example.buho.R
 
 class EventsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var title: TextView = itemView.findViewById(R.id.MEC_title)
-    var state: TextView = itemView.findViewById(R.id.MEC_state)
+    var date: TextView = itemView.findViewById(R.id.MEC_state)
     var classroom: TextView = itemView.findViewById(R.id.MEC_classroom)
     var schedule: TextView = itemView.findViewById(R.id.MEC_schedule)
     var description: TextView = itemView.findViewById(R.id.MEC_description)

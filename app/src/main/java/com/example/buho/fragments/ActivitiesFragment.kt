@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
@@ -15,19 +14,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.R
 import com.example.buho.adapters.MyActivitiesListAdapter
-import com.example.buho.adapters.MyEventsListAdapter
 import com.example.buho.adapters.SuggestedActivityListAdapter
 import com.example.buho.databinding.ActivitiesPageBinding
 import com.example.buho.models.MyActivityCardComponent
-import com.example.buho.models.MyEventCardComponent
 import com.example.buho.models.SuggestedEventComponent
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.tasks.await
 
 class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activities_page) {
     private var _binding: ActivitiesPageBinding?=null
@@ -74,11 +67,15 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
 
     private fun loadActivities(){
         Firebase.firestore.collection("activities").get().addOnSuccessListener{
+            val activities = ArrayList<SuggestedEventComponent>()
             for (document in it.documents) {
-                val obj = document.toObject(SuggestedEventComponent::class.java)
-                activitiesAdapter.addCard(obj!!)
+                val obj = document.toObject<SuggestedEventComponent>()
+                activities.add(obj!!)
             }
-                activitiesAdapter.notifyDataSetChanged()
+
+            activitiesAdapter.setDataSet(activities)
+            activitiesAdapter.notifyDataSetChanged()
+
         }.addOnFailureListener{
             Log.e("<<<", it.message.toString())
         }
@@ -108,20 +105,18 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
         val dialogParams : ArrayList<String> = ArrayList()
         textsArrays.forEach{
             val currentText = it as TextView
-            if(currentText.text != ""){
-                dialogParams.add(currentText.text as String)
-            }
+            dialogParams.add(currentText.text as String)
         }
 
         DetailsFragment(
             tittle = dialogParams[0],
-            state =  dialogParams[1],
+            date =  dialogParams[1],
             classroom =  dialogParams[2],
             schedule =  dialogParams[3],
-            details =  "Ven a disfrutar con Bienestar Universitario",
-            speaker_type =  "Profesor: ",
+            details =  dialogParams[4],
+            speaker_type =  getString(R.string.AF_speaker_type),
             speaker_name =  dialogParams[4],
-            mainButtonText = "Seguir evento",
+            mainButtonText = getString(R.string.AF_main_button_text),
             onClickMethod = { imInterested(view) }
         ).show(parentFragmentManager, "details")
     }
@@ -148,7 +143,7 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
             dialogParams[4]
         )
 
-        Firebase.firestore.collection("users").document(Firebase.auth.currentUser!!.uid).collection("interestedActivities")
+        //Firebase.firestore.collection("users").document(Firebase.auth.currentUser!!.uid).collection("interestedActivities")
 
         myActivitiesAdapter.addCard(newCard)
         myActivitiesAdapter.notifyDataSetChanged()

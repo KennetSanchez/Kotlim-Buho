@@ -1,8 +1,13 @@
 package com.example.buho.adapters
 
+import android.provider.Settings.Global.getString
+import android.provider.Settings.Secure.getString
+import android.provider.Settings.System.getString
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.core.view.get
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buho.R
 import com.example.buho.fragments.ActivitiesFragment
@@ -33,13 +38,13 @@ class MyActivitiesListAdapter (private val activities : ActivitiesFragment): Rec
         holder.layout.setOnClickListener {
             DetailsFragment(
                 tittle = cardN.title,
-                state =  cardN.state,
+                date =  cardN.state,
                 classroom =  cardN.classroom,
                 schedule =  cardN.schedule,
                 details =  cardN.description,
-                speaker_type =  R.string.MAC_speaker_type.toString(),
+                speaker_type =  "Profesor",
                 speaker_name =  cardN.teacher,
-                mainButtonText = R.string.MAC_button_text.toString(),
+                mainButtonText = "Estoy aquí",
                 onClickMethod = { imHere() }
             ).show(activities.parentFragmentManager, "details")
         }

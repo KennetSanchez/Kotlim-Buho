@@ -27,19 +27,19 @@ class SuggestedActivityListAdapter (private val activities : ActivitiesFragment)
         holder.date.text = cardN.date
         holder.classroom.text = cardN.classroom
         holder.schedule.text = cardN.schedule
-        holder.teacher.text = cardN.teacher
+        holder.teacher.text = cardN.professor
         holder.description.text = cardN.description
 
         holder.layout.setOnClickListener {
             DetailsFragment(
                 tittle = cardN.title,
-                state =  cardN.date,
+                date =  cardN.date,
                 classroom =  cardN.classroom,
                 schedule =  cardN.schedule,
                 details =  cardN.description,
-                speaker_type =  R.string.MAC_speaker_type.toString(),
-                speaker_name =  cardN.teacher,
-                mainButtonText = R.string.MAC_button_text.toString(),
+                speaker_type =  "Profesor",
+                speaker_name =  cardN.professor,
+                mainButtonText = "Estoy aquí",
                 onClickMethod = { imHere() }
             ).show(activities.parentFragmentManager, "details")
         }
@@ -56,5 +56,9 @@ class SuggestedActivityListAdapter (private val activities : ActivitiesFragment)
 
     fun addCard(cardComponent: SuggestedEventComponent) {
         myActivitiesCards.add(cardComponent)
+    }
+
+    fun setDataSet(newDataSet : ArrayList<SuggestedEventComponent>){
+        myActivitiesCards = newDataSet
     }
 }

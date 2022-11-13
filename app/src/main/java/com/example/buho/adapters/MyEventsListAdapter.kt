@@ -24,7 +24,7 @@ class MyEventsListAdapter(private val home: HomeFragment) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
         val cardN = myEventsCards[position]
         holder.title.text = cardN.title
-        holder.state.text = cardN.state
+        holder.date.text = cardN.date
         holder.classroom.text = cardN.classroom
         holder.schedule.text = cardN.schedule
         holder.description.text = cardN.description
@@ -32,7 +32,7 @@ class MyEventsListAdapter(private val home: HomeFragment) : RecyclerView.Adapter
         holder.layout.setOnClickListener {
             DetailsFragment(
                 tittle = cardN.title,
-                state =  cardN.state,
+                date =  cardN.date,
                 classroom =  cardN.classroom,
                 schedule =  cardN.schedule,
                 details =  cardN.description,

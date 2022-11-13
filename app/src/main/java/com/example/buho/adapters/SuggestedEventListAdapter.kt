@@ -18,7 +18,7 @@ class SuggestedEventListAdapter (private val home : HomeFragment): RecyclerView.
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuggestedEventViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.my_activity_card, parent, false)
+        val view = inflater.inflate(R.layout.suggested_card, parent, false)
         return SuggestedEventViewHolder(view)
     }
 
@@ -28,19 +28,19 @@ class SuggestedEventListAdapter (private val home : HomeFragment): RecyclerView.
         holder.date.text = cardN.date
         holder.classroom.text = cardN.classroom
         holder.schedule.text = cardN.schedule
-        holder.teacher.text = cardN.teacher
+        holder.teacher.text = cardN.professor
         holder.description.text = cardN.description
 
         holder.layout.setOnClickListener {
             DetailsFragment(
                 tittle = cardN.title,
-                state =  cardN.date,
+                date =  cardN.date,
                 classroom =  cardN.classroom,
                 schedule =  cardN.schedule,
                 details =  cardN.description,
-                speaker_type =  R.string.MEC_speaker_type.toString(),
-                speaker_name =  cardN.teacher,
-                mainButtonText = R.string.MAC_button_text.toString(),
+                speaker_type =  "Ponente: ",
+                speaker_name =  cardN.professor,
+                mainButtonText = "Estoy aquí",
                 onClickMethod = { imHere() }
             ).show(home.parentFragmentManager, "details")
         }
@@ -57,5 +57,9 @@ class SuggestedEventListAdapter (private val home : HomeFragment): RecyclerView.
 
     fun addCard(cardComponent: SuggestedEventComponent) {
         myActivitiesCards.add(cardComponent)
+    }
+
+    fun setDataSet(newDataSet : ArrayList<SuggestedEventComponent>){
+        myActivitiesCards = newDataSet
     }
 }

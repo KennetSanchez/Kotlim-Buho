@@ -73,7 +73,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/DE_state"
+                    android:id="@+id/DE_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="22dp"
@@ -100,7 +100,7 @@
                     android:layout_marginEnd="44dp"
                     android:text="Horario"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/DE_state" />
+                    app:layout_constraintTop_toBottomOf="@+id/DE_date" />
 
                 <TextView
                     android:id="@+id/DE_speaker_type"

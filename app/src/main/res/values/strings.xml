@@ -160,4 +160,6 @@
     <string name="MAC_speaker_type">"Profesor: "</string>
     <string name="MAC_button_text">Estoy aquí</string>
     <string name="MEC_speaker_type">"Ponente: "</string>
+    <string name="AF_speaker_type">"Profesor: "</string>
+    <string name="AF_main_button_text">Seguir evento</string>
 </resources>

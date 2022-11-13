@@ -12,7 +12,7 @@ import com.example.buho.databinding.DetailsDialogBinding
 
 class DetailsFragment(
     private val tittle: String,
-    private val state: String,
+    private val date: String,
     private val classroom: String,
     private val schedule: String,
     private val speaker_type: String,
@@ -34,7 +34,7 @@ class DetailsFragment(
 //            binding.DEBlurBackdrop.setBlurRadius(radius).setBlurEnabled(true) // <-- Currently not working
 
             binding.DETitle.text = tittle;
-            binding.DEState.text = state;
+            binding.DEDate.text = date;
             binding.DEClassroom.text = classroom;
             binding.DESchedule.text = schedule;
             binding.DESpeakerType.text = speaker_type;
