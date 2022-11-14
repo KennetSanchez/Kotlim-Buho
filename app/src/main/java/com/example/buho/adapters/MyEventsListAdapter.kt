@@ -46,7 +46,7 @@ class MyEventsListAdapter(private val home: HomeFragment) : RecyclerView.Adapter
     }
 
     private fun imHere(){
-        (home.main[0] as BottomNavigationView).selectedItemId = R.id.assistenceItem
+        (home.main[1] as BottomNavigationView).selectedItemId = R.id.assistenceItem
     }
 
     override fun getItemCount(): Int {

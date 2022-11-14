@@ -3,6 +3,7 @@ package com.example.buho.adapters
 import android.provider.Settings.Global.getString
 import android.provider.Settings.Secure.getString
 import android.provider.Settings.System.getString
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.res.TypedArrayUtils.getString
@@ -52,7 +53,7 @@ class MyActivitiesListAdapter (private val activities : ActivitiesFragment): Rec
     }
 
     private fun imHere(){
-        (activities.main[0] as BottomNavigationView).selectedItemId = R.id.assistenceItem
+        (activities.main[1] as BottomNavigationView).selectedItemId = R.id.assistenceItem
     }
 
     override fun getItemCount(): Int {

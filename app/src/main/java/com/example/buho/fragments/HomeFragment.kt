@@ -15,22 +15,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.models.MyEventCardComponent
 import com.example.buho.R
 import com.example.buho.adapters.MyEventsListAdapter
-import com.example.buho.adapters.SuggestedActivityListAdapter
 import com.example.buho.adapters.SuggestedEventListAdapter
 import com.example.buho.databinding.HomePageBinding
 import com.example.buho.models.SuggestedEventComponent
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.google.firestore.v1.DocumentChange
 
 class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
     private var _binding: HomePageBinding?=null
     private val binding get()=_binding!!
 
     private val myEventsAdapter = MyEventsListAdapter(this)
-    private val eventsAdapter = SuggestedEventListAdapter(this)
+    private val eventsAdapter = SuggestedEventListAdapter(this, myEventsAdapter)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -107,6 +104,7 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
     }
 
     private fun showDetails(view : View){
+        Log.i(">>>", "This thing is show details")
         val cl = view as ConstraintLayout
         val textsArrays = cl.children
 

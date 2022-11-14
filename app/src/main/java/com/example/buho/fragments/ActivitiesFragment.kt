@@ -27,7 +27,7 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
     private val binding get()=_binding!!
 
     private val myActivitiesAdapter = MyActivitiesListAdapter(this)
-    private val activitiesAdapter = SuggestedActivityListAdapter(this)
+    private val activitiesAdapter = SuggestedActivityListAdapter(this, myActivitiesAdapter)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
