@@ -6,34 +6,75 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="6dp"
-        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/details_info"
+        app:cardCornerRadius="@dimen/card_view_pronounced_radius"
+        app:cardElevation="@dimen/cardview_default_elevation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="350dp"
-                android:layout_height="100dp"
-                android:background="@color/details_header_footer"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/constraintLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/details_info"
+                app:layout_constraintBottom_toTopOf="@id/constraintLayout1"
+                app:layout_constraintEnd_toEndOf="@id/constraintLayout1"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                android:minHeight="186dp">
+
+                <TextView
+                    android:id="@+id/DE_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:justificationMode="inter_word"
+                    android:maxWidth="320dp"
+                    android:text="Detalles"
+                    android:textColor="@color/main_text_color"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="o" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/details_header_footer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <Button
                     android:id="@+id/DE_not_interested"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
                     android:backgroundTint="@color/btn_danger"
                     android:text="@string/details_secondary_button_text"
+                    android:textColor="@color/btn_danger_text"
                     app:circularflow_defaultRadius="20dp"
                     app:circularflow_radiusInDP="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -44,8 +85,10 @@
                     android:id="@+id/DE_main_button"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/btn_primary"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="16dp"
                     android:text="Botón primario"
                     android:textColor="@color/secondary_text_color"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -66,9 +109,10 @@
                     android:id="@+id/DE_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
-                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
                     android:text="Título"
+                    android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,9 +120,10 @@
                     android:id="@+id/DE_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="22dp"
-                    android:layout_marginEnd="45dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
                     android:text="Estado"
+                    android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,9 +131,10 @@
                     android:id="@+id/DE_classroom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="11dp"
                     android:text="Salón"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/DE_title" />
 
@@ -97,8 +143,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="11dp"
-                    android:layout_marginEnd="44dp"
+                    android:layout_marginEnd="24dp"
                     android:text="Horario"
+                    android:textSize="18dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/DE_date" />
 
@@ -106,7 +153,7 @@
                     android:id="@+id/DE_speaker_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="11dp"
                     android:layout_marginBottom="20dp"
                     android:text="Tipo ponente"
@@ -119,7 +166,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="44dp"
+                    android:layout_marginEnd="24dp"
                     android:layout_marginBottom="20dp"
                     android:text="Ponente / profesor"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -127,28 +174,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/DE_schedule" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
-                android:layout_width="350dp"
-                android:layout_height="300dp"
-                android:background="@color/details_info"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-                <TextView
-                    android:id="@+id/DE_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="320dp"
-                    android:text="Detalles"
-                    android:textColor="@color/main_text_color"
-                    android:textSize="24dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

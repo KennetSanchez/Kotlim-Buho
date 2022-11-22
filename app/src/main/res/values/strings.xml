@@ -162,4 +162,5 @@
     <string name="MEC_speaker_type">"Ponente: "</string>
     <string name="AF_speaker_type">"Profesor: "</string>
     <string name="AF_main_button_text">Seguir evento</string>
+    <string name="AS_title">Mis Asistencias</string>
 </resources>
