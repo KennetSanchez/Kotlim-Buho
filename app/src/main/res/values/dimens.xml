@@ -4,12 +4,13 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="card_size_small">140dp</dimen>
+    <dimen name="card_size_small">174dp</dimen>
     <dimen name="event_card_container_height">140dp</dimen>
     <dimen name="card_container_width">360dp</dimen>
     <dimen name="input_container_width">274dp</dimen>
     <dimen name="input_width">230dp</dimen>
     <dimen name="input_height">30dp</dimen>
+    <dimen name="card_view_pronounced_radius">6dp</dimen>
 
     <dimen name="table_height">346dp</dimen>
     <dimen name="table_width">362dp</dimen>

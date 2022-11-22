@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.models.MyEventCardComponent
 import com.example.buho.R
@@ -44,7 +45,7 @@ class HomeFragment(val main : ConstraintLayout) : Fragment(R.layout.home_page) {
 
         val eventsRV = binding.HFEvRv
         eventsRV.setHasFixedSize(true)
-        eventsRV.layoutManager = LinearLayoutManager(activity)
+        eventsRV.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
         eventsRV.adapter = eventsAdapter
 
         loadEvents()

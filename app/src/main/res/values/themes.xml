@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Buho" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
-
+        <item name="colorPrimaryVariant">@color/btn_auth</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

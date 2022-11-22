@@ -1,122 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    android:id="@+id/AC_card"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/activity_card_container_height"
-    android:layout_marginStart="5dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginBottom="20dp"
-    android:elevation="@dimen/cardview_default_elevation"
-    android:paddingLeft="10dp"
-    android:paddingTop="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp"
-    app:cardBackgroundColor="@color/btn_secondary"
-    app:cardCornerRadius="@dimen/cardview_default_radius"
-    app:cardElevation="@dimen/cardview_default_elevation"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="@dimen/activity_card_container_height" >
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/MAC_cl"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/AC_card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:clickable="true"
-        android:focusable="true">
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:cardBackgroundColor="@color/btn_secondary"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/MAC_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/AF_dummy_my_activities_title_1"
-            android:textColor="@color/main_text_color"
-            android:textSize="12sp"
-            android:typeface="sans"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/MAC_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/AF_dummy_my_activities_title_1"
-            android:textColor="@color/main_text_color"
-            android:textSize="0sp"
-            android:typeface="sans"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/MAC_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="12dp"
-            android:text="@string/AF_dummy_my_activities_day_1"
-            android:textColor="@color/main_text_color"
-            android:textSize="12sp"
-            android:typeface="sans"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/MAC_classroom"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="28dp"
-            android:text="@string/AF_dummy_my_activities_classroom_1"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="12sp"
-            android:typeface="sans"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/MAC_schedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="12dp"
-            android:text="@string/AF_dummy_my_activities_schedule_1"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="12sp"
-            android:typeface="sans"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/MAC_teacher"
-            android:layout_width="276dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/AF_dummy_my_activities_teacher_1"
-            android:textAlignment="center"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="11sp"
-            android:typeface="sans"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/MAC_separator"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/MAC_cl"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="50dp"
-            android:background="@color/panel_separator"
-            android:textColor="@color/panel_separator"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:clickable="true"
+            android:focusable="true">
 
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/MAC_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/AF_dummy_my_activities_title_1"
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp"
+                android:typeface="sans"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/MAC_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/AF_dummy_my_activities_title_1"
+                android:textColor="@color/main_text_color"
+                android:textSize="0sp"
+                android:typeface="sans"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/MAC_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/AF_dummy_my_activities_day_1"
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/MAC_classroom"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/AF_dummy_my_activities_classroom_1"
+                android:textColor="@color/secondary_text_color"
+                android:textSize="12sp"
+                android:typeface="sans"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/MAC_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/AF_dummy_my_activities_schedule_1"
+                android:textColor="@color/secondary_text_color"
+                android:textSize="12sp"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/MAC_teacher"
+                android:layout_width="276dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/AF_dummy_my_activities_teacher_1"
+                android:textAlignment="center"
+                android:textColor="@color/secondary_text_color"
+                android:textSize="11sp"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/MAC_separator"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="50dp"
+                android:background="@color/panel_separator"
+                android:textColor="@color/panel_separator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

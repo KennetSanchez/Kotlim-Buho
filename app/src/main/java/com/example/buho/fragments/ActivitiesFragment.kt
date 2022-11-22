@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buho.R
 import com.example.buho.adapters.MyActivitiesListAdapter
@@ -45,7 +46,7 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
 
         val activitiesRV = binding.AFSaRV
         activitiesRV.setHasFixedSize(true)
-        activitiesRV.layoutManager = LinearLayoutManager(activity)
+        activitiesRV.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
         activitiesRV.adapter = activitiesAdapter
 
         loadActivities()

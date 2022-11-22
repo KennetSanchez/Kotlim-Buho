@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_app"
+    android:background="@color/navbar"
     tools:context=".activities.MainActivity">
 
     <LinearLayout
@@ -24,18 +24,19 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
             android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/logout_IV"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/box_arrow_left"
-                android:clickable="true"
-                android:focusable="true" />
+                app:srcCompat="@drawable/box_arrow_left" />
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -64,7 +65,6 @@
         android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/btn_auth"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
