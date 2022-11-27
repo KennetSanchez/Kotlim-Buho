@@ -15,6 +15,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.buho.R
+import com.example.buho.activities.LoginActivity
+import com.example.buho.activities.QrScanActivity
 import com.example.buho.databinding.AssistancePageBinding
 
 class AssistanceFragment : Fragment(R.layout.assistance_page) {
@@ -31,7 +33,10 @@ class AssistanceFragment : Fragment(R.layout.assistance_page) {
         binding.qrScanBtn.setOnClickListener{
             requestPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
-
+        binding.qrScanBtn.setOnClickListener{
+            val intent = Intent(this.context, QrScanActivity::class.java)
+            startActivity(intent)
+        }
         return view;
     }
 

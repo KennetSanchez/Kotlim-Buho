@@ -87,48 +87,48 @@
     <string name="AF_activity_day">Día: </string>
     <string name="AF_activity_schedule">Hora: </string>
 
-        <!-- Dummy info -->
-        <string name="AF_dummy_my_activities_title_1">Trombón</string>
-        <string name="AF_dummy_my_activities_classroom_1">I-204</string>
-        <string name="AF_dummy_my_activities_day_1">Martes</string>
-        <string name="AF_dummy_my_activities_schedule_1">16:00 – 18:00</string>
-        <string name="AF_dummy_my_activities_teacher_1">Yeinson Muñoz</string>
+    <!-- Dummy info -->
+    <string name="AF_dummy_my_activities_title_1">Trombón</string>
+    <string name="AF_dummy_my_activities_classroom_1">I-204</string>
+    <string name="AF_dummy_my_activities_day_1">Martes</string>
+    <string name="AF_dummy_my_activities_schedule_1">16:00 – 18:00</string>
+    <string name="AF_dummy_my_activities_teacher_1">Yeinson Muñoz</string>
 
-        <string name="AF_dummy_my_activities_title_2">Saxofón</string>
-        <string name="AF_dummy_my_activities_classroom_2">G-111</string>
-        <string name="AF_dummy_my_activities_day_2">Miércoles</string>
-        <string name="AF_dummy_my_activities_schedule_2">12:00 – 14:00</string>
-        <string name="AF_dummy_my_activities_teacher_2">Julián Andres Henao</string>
+    <string name="AF_dummy_my_activities_title_2">Saxofón</string>
+    <string name="AF_dummy_my_activities_classroom_2">G-111</string>
+    <string name="AF_dummy_my_activities_day_2">Miércoles</string>
+    <string name="AF_dummy_my_activities_schedule_2">12:00 – 14:00</string>
+    <string name="AF_dummy_my_activities_teacher_2">Julián Andres Henao</string>
 
-        <string name="AF_dummy_my_activities_title_3">Técnica vocal</string>
-        <string name="AF_dummy_my_activities_classroom_3">G-116</string>
-        <string name="AF_dummy_my_activities_day_3">Viernes</string>
-        <string name="AF_dummy_my_activities_schedule_3">12:00 – 15:00</string>
-        <string name="AF_dummy_my_activities_teacher_3">Julián Eduardo Vargas</string>
+    <string name="AF_dummy_my_activities_title_3">Técnica vocal</string>
+    <string name="AF_dummy_my_activities_classroom_3">G-116</string>
+    <string name="AF_dummy_my_activities_day_3">Viernes</string>
+    <string name="AF_dummy_my_activities_schedule_3">12:00 – 15:00</string>
+    <string name="AF_dummy_my_activities_teacher_3">Julián Eduardo Vargas</string>
 
-        <string name="AF_dummy_suggested_activities_title_1">Baile</string>
-        <string name="AF_dummy_suggested_activities_day_1">Martes</string>
-        <string name="AF_dummy_suggested_activities_schedule_1">12:00-14:00</string>
+    <string name="AF_dummy_suggested_activities_title_1">Baile</string>
+    <string name="AF_dummy_suggested_activities_day_1">Martes</string>
+    <string name="AF_dummy_suggested_activities_schedule_1">12:00-14:00</string>
 
-        <string name="AF_dummy_suggested_activities_title_2">Bajo eléctrico</string>
-        <string name="AF_dummy_suggested_activities_day_2">Miércoles</string>
-        <string name="AF_dummy_suggested_activities_schedule_2">10:00-12:00</string>
+    <string name="AF_dummy_suggested_activities_title_2">Bajo eléctrico</string>
+    <string name="AF_dummy_suggested_activities_day_2">Miércoles</string>
+    <string name="AF_dummy_suggested_activities_schedule_2">10:00-12:00</string>
 
-        <string name="AF_dummy_suggested_activities_title_3">Piano</string>
-        <string name="AF_dummy_suggested_activities_day_3">Miércoles</string>
-        <string name="AF_dummy_suggested_activities_schedule_3">11:00-13:00</string>
+    <string name="AF_dummy_suggested_activities_title_3">Piano</string>
+    <string name="AF_dummy_suggested_activities_day_3">Miércoles</string>
+    <string name="AF_dummy_suggested_activities_schedule_3">11:00-13:00</string>
 
-        <string name="AF_dummy_suggested_activities_title_4">Batería</string>
-        <string name="AF_dummy_suggested_activities_day_4">Jueves</string>
-        <string name="AF_dummy_suggested_activities_schedule_4">14:00-17:00</string>
+    <string name="AF_dummy_suggested_activities_title_4">Batería</string>
+    <string name="AF_dummy_suggested_activities_day_4">Jueves</string>
+    <string name="AF_dummy_suggested_activities_schedule_4">14:00-17:00</string>
 
-        <string name="AF_dummy_suggested_activities_title_5">Ilustración</string>
-        <string name="AF_dummy_suggested_activities_day_5">Viernes</string>
-        <string name="AF_dummy_suggested_activities_schedule_5">15:00-17:00</string>
+    <string name="AF_dummy_suggested_activities_title_5">Ilustración</string>
+    <string name="AF_dummy_suggested_activities_day_5">Viernes</string>
+    <string name="AF_dummy_suggested_activities_schedule_5">15:00-17:00</string>
 
-        <string name="AF_dummy_suggested_activities_title_6">Arte en madera</string>
-        <string name="AF_dummy_suggested_activities_day_6">Sábado</string>
-        <string name="AF_dummy_suggested_activities_schedule_6">11:00-14:00</string>
+    <string name="AF_dummy_suggested_activities_title_6">Arte en madera</string>
+    <string name="AF_dummy_suggested_activities_day_6">Sábado</string>
+    <string name="AF_dummy_suggested_activities_schedule_6">11:00-14:00</string>
 
 
     <!-- Strings used for Assistance Fragment -->
@@ -155,7 +155,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must have more than 5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="Register" >Register</string>
+    <string name="Register">Register</string>
     <string name="icon_description">Buho placeholder icon</string>
     <string name="MAC_speaker_type">"Profesor: "</string>
     <string name="MAC_button_text">Estoy aquí</string>
