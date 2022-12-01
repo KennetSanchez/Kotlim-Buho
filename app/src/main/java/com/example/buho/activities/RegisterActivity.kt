@@ -46,7 +46,7 @@ class RegisterActivity : AppCompatActivity() {
 
         Firebase.auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
             val id = Firebase.auth.currentUser?.uid
-            val user = User(id!!, binding.RAUserIfName.text.toString(), email, password)
+            val user = User(id!!, binding.RAUserIfName.text.toString(), email)
 
 
             Firebase.firestore.collection("users").document(id).set(user).addOnSuccessListener {

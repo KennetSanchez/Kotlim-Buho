@@ -33,10 +33,6 @@ class AssistanceFragment : Fragment(R.layout.assistance_page) {
         binding.qrScanBtn.setOnClickListener{
             requestPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
-        binding.qrScanBtn.setOnClickListener{
-            val intent = Intent(this.context, QrScanActivity::class.java)
-            startActivity(intent)
-        }
         return view;
     }
 
@@ -44,7 +40,9 @@ class AssistanceFragment : Fragment(R.layout.assistance_page) {
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
-            startForResult.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
+            startForResult.launch(Intent(this.context, QrScanActivity::class.java))
+            //val intent = Intent(this.context, QrScanActivity::class.java)
+            //startActivity(intent)
         } else {
             Toast.makeText(context, "Se necesita permiso para usar la cámara", Toast.LENGTH_SHORT).show()
         }
