@@ -3,6 +3,7 @@ package com.example.buho.activities
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,9 +11,12 @@ import com.budiyev.android.codescanner.*
 import com.example.buho.R
 import com.example.buho.fragments.AssistanceFragment
 import com.example.buho.models.Assistance
+import com.example.buho.models.SuggestedEventComponent
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.tasks.await
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -39,7 +43,7 @@ class QrScanActivity : AppCompatActivity() {
         codeScanner.isFlashEnabled = false // Whether to enable flash or not
 
         // Callbacks
-        codeScanner.decodeCallback = DecodeCallback {
+        codeScanner.decodeCallback = DecodeCallback { it ->
 
             /*runOnUiThread {
                 Toast.makeText(this, "Scan result: ${it.text}, hoy: $current", Toast.LENGTH_LONG).show()
@@ -51,41 +55,38 @@ class QrScanActivity : AppCompatActivity() {
 
                 if(txt.startsWith(ACT_PREFIX)){
                     txt=txt.removePrefix(ACT_PREFIX)
-                    val assistance = Assistance(txt, current)
+                    Firebase.firestore.collection("activities").document(txt).get().addOnSuccessListener {result->
+                            val activity = result.toObject<SuggestedEventComponent>()
+                        Log.e(">>> result", result.toString())
+                            if(activity!=null){
+                                Log.e(">>>xd3",activity.title)
+                                val assistance = Assistance(txt, activity.title,current)
+                                Log.e(">>> assistecna", assistance.toString())
+                                Firebase.firestore.collection("users").document(id!!).collection("assistanceActivities").document(txt).set(assistance).addOnSuccessListener {
+                                    runOnUiThread {
+                                        Toast.makeText(this, "Asistencia registrada a actividad", Toast.LENGTH_LONG).show()
 
-                    val f: Fragment = AssistanceFragment()
-                    val args = Bundle() //* Bundle a recibir con datos.
-
-                    args.putSerializable(
-                        "Assistance",
-                        assistance
-                    ) // tendrias que poner el clase extendiendo de Serializable para poder pasar objetos enteros
-
-                    f.setArguments(args)
-
-                    supportFragmentManager
-                        .beginTransaction()
-                        .commit()
-
-
-                    Firebase.firestore.collection("users").document(id!!).collection("assistanceActivities").document(txt).set(assistance).addOnSuccessListener {
-                        runOnUiThread {
-                            Toast.makeText(this, "Asistencia registrada", Toast.LENGTH_LONG).show()
-
+                                    }
+                                }
+                            }else{
+                                Toast.makeText(this, "La actividad no existe", Toast.LENGTH_LONG).show()
+                            }
                         }
-                    }
                 }else if(txt.startsWith(EVENT_PREFIX)){
                     txt=txt.removePrefix(EVENT_PREFIX)
-                    val assistance = Assistance(txt, current)
+                    Firebase.firestore.collection("events").document(txt).get().addOnSuccessListener {result->
+                        val event = result.toObject<SuggestedEventComponent>()
+                        if(event!=null){
+                            Log.e(">>>xd5",event.title)
+                            val assistance = Assistance(txt, event.title,current)
+                            Firebase.firestore.collection("users").document(id!!).collection("assistanceEvents").document(txt).set(assistance).addOnSuccessListener {
+                                runOnUiThread {
+                                    Toast.makeText(this, "Asistencia registrada a evento", Toast.LENGTH_LONG).show()
 
-                    val intent= Intent(this, MainActivity::class.java).apply {
-                        putExtra("assistance", assistance)
-                    }
-                    startActivity(intent)
-
-                    Firebase.firestore.collection("users").document(id!!).collection("assistanceEvents").document(txt).set(assistance).addOnSuccessListener {
-                        runOnUiThread {
-                            Toast.makeText(this, "Asistencia registrada", Toast.LENGTH_LONG).show()
+                                }
+                            }
+                        }else{
+                            Toast.makeText(this, "El eventi no existe", Toast.LENGTH_LONG).show()
                         }
                     }
                 }else{
@@ -94,6 +95,7 @@ class QrScanActivity : AppCompatActivity() {
                             Toast.LENGTH_LONG).show()
                     }
                 }
+
                 finish()
 
         }

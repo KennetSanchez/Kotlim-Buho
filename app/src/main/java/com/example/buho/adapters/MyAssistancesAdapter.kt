@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.buho.R
 import com.example.buho.fragments.AssistanceFragment
 import com.example.buho.models.Assistance
+import com.example.buho.models.SuggestedEventComponent
 import com.example.buho.viewholders.AssistanceViewHolder
 
 class MyAssistancesAdapter (private val activities : AssistanceFragment): RecyclerView.Adapter<AssistanceViewHolder>() {
@@ -20,7 +21,7 @@ class MyAssistancesAdapter (private val activities : AssistanceFragment): Recycl
 
     override fun onBindViewHolder(holder: AssistanceViewHolder, position: Int) {
         val cardN = myAssistancesCards[position]
-        holder.title.text = cardN.id
+        holder.title.text = cardN.title
         holder.schedule.text = cardN.date
     }
 
@@ -31,6 +32,8 @@ class MyAssistancesAdapter (private val activities : AssistanceFragment): Recycl
     fun addCard(cardComponent: Assistance) {
         myAssistancesCards.add(cardComponent)
     }
-
+    fun setDataSet(newDataSet : ArrayList<Assistance>){
+        myAssistancesCards = newDataSet
+    }
 
 }
