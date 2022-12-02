@@ -78,20 +78,10 @@ class QrScanActivity : AppCompatActivity() {
                     txt=txt.removePrefix(EVENT_PREFIX)
                     val assistance = Assistance(txt, current)
 
-
-                    val f: Fragment = AssistanceFragment()
-                    val args = Bundle() //* Bundle a recibir con datos.
-
-                    args.putSerializable(
-                        "Assistance",
-                        assistance
-                    )
-
-                    f.setArguments(args)
-
-                    supportFragmentManager
-                        .beginTransaction()
-                        .commit()
+                    val intent= Intent(this, MainActivity::class.java).apply {
+                        putExtra("assistance", assistance)
+                    }
+                    startActivity(intent)
 
                     Firebase.firestore.collection("users").document(id!!).collection("assistanceEvents").document(txt).set(assistance).addOnSuccessListener {
                         runOnUiThread {

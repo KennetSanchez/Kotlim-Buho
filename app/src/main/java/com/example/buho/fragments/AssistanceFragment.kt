@@ -21,7 +21,7 @@ import com.example.buho.models.Assistance
 class AssistanceFragment : Fragment(R.layout.assistance_page) {
     private var _binding: AssistancePageBinding?=null
     private val binding get()=_binding!!
-    lateinit var assistance: Assistance
+    private lateinit var assistance: Assistance
 
     private val myAssistancesAdapter = MyAssistancesAdapter(this);
 
@@ -67,7 +67,7 @@ class AssistanceFragment : Fragment(R.layout.assistance_page) {
         val card3 = Assistance(getString(R.string.AF_dummy_my_activities_title_3), getString(R.string.AF_dummy_my_activities_schedule_3))
 
 
-        myAssistancesAdapter.addCard(card1)
+        myAssistancesAdapter.addCard(assistance)
         myAssistancesAdapter.addCard(card2)
         myAssistancesAdapter.addCard(card3)
 

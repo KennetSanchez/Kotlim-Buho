@@ -10,6 +10,7 @@ import com.example.buho.fragments.AssistanceFragment
 import com.example.buho.fragments.HomeFragment
 import com.example.buho.R
 import com.example.buho.databinding.ActivityMainBinding
+import com.example.buho.models.Assistance
 import com.example.buho.models.User
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -45,6 +46,21 @@ class MainActivity : AppCompatActivity() {
         val homeFragment = HomeFragment(binding.root)
         val activitiesFragment = ActivitiesFragment(binding.root)
         val assistanceFragment = AssistanceFragment()
+        val assistance=intent.extras?.getSerializable("assistance")
+
+        val f: Fragment = AssistanceFragment()
+        val args = Bundle() //* Bundle a recibir con datos.
+
+        args.putSerializable(
+            "Assistance",
+            assistance
+        )
+
+        f.arguments = args
+
+        supportFragmentManager
+            .beginTransaction()
+            .commit()
 
         setCurrentFragment(homeFragment)
 
@@ -62,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                 when (menuItem.itemId) {
                     R.id.homeItem -> setCurrentFragment(homeFragment)
                     R.id.activitiesItem -> setCurrentFragment(activitiesFragment)
+
                     R.id.assistenceItem -> setCurrentFragment(assistanceFragment)
                     else -> {
                         false
