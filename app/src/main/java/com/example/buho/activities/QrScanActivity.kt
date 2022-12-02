@@ -1,11 +1,14 @@
 package com.example.buho.activities
 
+import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.budiyev.android.codescanner.*
 import com.example.buho.R
+import com.example.buho.fragments.AssistanceFragment
 import com.example.buho.models.Assistance
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -22,6 +25,7 @@ class QrScanActivity : AppCompatActivity() {
         val scannerView = findViewById<CodeScannerView>(R.id.scanner_view)
         val ACT_PREFIX="ACTBUHO: "
         val EVENT_PREFIX="EVTBUHO: "
+        val bundle= Bundle()
 
         codeScanner = CodeScanner(this, scannerView)
 
@@ -48,14 +52,47 @@ class QrScanActivity : AppCompatActivity() {
                 if(txt.startsWith(ACT_PREFIX)){
                     txt=txt.removePrefix(ACT_PREFIX)
                     val assistance = Assistance(txt, current)
+
+                    val f: Fragment = AssistanceFragment()
+                    val args = Bundle() //* Bundle a recibir con datos.
+
+                    args.putSerializable(
+                        "Assistance",
+                        assistance
+                    ) // tendrias que poner el clase extendiendo de Serializable para poder pasar objetos enteros
+
+                    f.setArguments(args)
+
+                    supportFragmentManager
+                        .beginTransaction()
+                        .commit()
+
+
                     Firebase.firestore.collection("users").document(id!!).collection("assistanceActivities").document(txt).set(assistance).addOnSuccessListener {
                         runOnUiThread {
                             Toast.makeText(this, "Asistencia registrada", Toast.LENGTH_LONG).show()
+
                         }
                     }
                 }else if(txt.startsWith(EVENT_PREFIX)){
                     txt=txt.removePrefix(EVENT_PREFIX)
                     val assistance = Assistance(txt, current)
+
+
+                    val f: Fragment = AssistanceFragment()
+                    val args = Bundle() //* Bundle a recibir con datos.
+
+                    args.putSerializable(
+                        "Assistance",
+                        assistance
+                    )
+
+                    f.setArguments(args)
+
+                    supportFragmentManager
+                        .beginTransaction()
+                        .commit()
+
                     Firebase.firestore.collection("users").document(id!!).collection("assistanceEvents").document(txt).set(assistance).addOnSuccessListener {
                         runOnUiThread {
                             Toast.makeText(this, "Asistencia registrada", Toast.LENGTH_LONG).show()
@@ -91,4 +128,6 @@ class QrScanActivity : AppCompatActivity() {
         codeScanner.releaseResources()
         super.onPause()
     }
+
+
 }

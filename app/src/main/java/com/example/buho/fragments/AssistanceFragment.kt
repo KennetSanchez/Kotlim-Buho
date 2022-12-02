@@ -21,8 +21,10 @@ import com.example.buho.models.Assistance
 class AssistanceFragment : Fragment(R.layout.assistance_page) {
     private var _binding: AssistancePageBinding?=null
     private val binding get()=_binding!!
+    lateinit var assistance: Assistance
 
     private val myAssistancesAdapter = MyAssistancesAdapter(this);
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +37,13 @@ class AssistanceFragment : Fragment(R.layout.assistance_page) {
         binding.qrScanBtn.setOnClickListener{
             requestPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
+
+
+        if (arguments != null) {
+            assistance = (arguments!!.getSerializable("Assistance") as Assistance?)!!
+        }
+        //state
+
 
         val myAssistanceRV = binding.ASMaRV
         myAssistanceRV.setHasFixedSize(true)
@@ -69,6 +78,7 @@ class AssistanceFragment : Fragment(R.layout.assistance_page) {
     ) { isGranted ->
         if (isGranted) {
             startForResult.launch(Intent(this.context, QrScanActivity::class.java))
+
             //val intent = Intent(this.context, QrScanActivity::class.java)
             //startActivity(intent)
         } else {
@@ -79,7 +89,7 @@ class AssistanceFragment : Fragment(R.layout.assistance_page) {
     private val startForResult=registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result: ActivityResult ->
                 if(result.resultCode== Activity.RESULT_OK){
-
+                    myAssistancesAdapter.addCard(assistance)
                 }
     }
 
