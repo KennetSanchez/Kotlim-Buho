@@ -33,7 +33,7 @@ class ActivitiesFragment(val main : ConstraintLayout) : Fragment(R.layout.activi
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = ActivitiesPageBinding.inflate(inflater,container, false)
         val view = binding.root;
